@@ -95,7 +95,7 @@ body {
   }
 }
 
-h1 {
+.header_heading {
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 3rem;
   font-style: normal;
@@ -106,7 +106,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-p {
+.header_text {
   font-family: Merriweather, serif;
   font-size: 1.125rem;
   font-style: normal;
@@ -117,7 +117,7 @@ p {
   color: var(--cream);
 }
 
-span {
+.header_span {
   color: var(--pastel-rose);
 }
 
@@ -245,6 +245,131 @@ span {
   }
 }
 
+.we-provide-container {
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cream-block {
+  width: 100vw;
+  background-color: var(--cream);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.cream-block-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: calc(100% - 4rem); /* Example: subtracting a fixed padding/margin */
+  max-width: 1320px; /* Set a max-width to ensure it doesn't get too wide on large screens */
+  padding: 2rem; /* Add some padding for spacing */
+  box-sizing: border-box; /* Ensure padding is included in the element's total width */
+}
+
+.info-block-title {
+  font-family: 'Borsok';
+  padding-bottom: 1rem;
+  line-height: 1.4;
+  font-size: 3rem;
+}
+
+.donut-people-image {
+  height: 35rem;
+  width: 35rem;
+}
+
+.chef-image {
+  padding-top: 4rem;
+  width: 35rem;
+  height: 35rem;
+}
+
+.info-block-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.info-block {
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  padding-right: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-us-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.about-us-text {
+  padding-left: 2rem;
+  text-align: left;
+}
+
+.about-us {
+  color: var(--black);
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.we-provide-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4rem;
+
+  font-family: 'Merriweather';
+  font-size: 2rem;
+  text-align: left;
+  padding: 2.5rem;
+  color:var(--black);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.we-provide-text-header {
+  padding-left: 0.5rem;
+  padding-bottom: 2.5rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
+  text-align: left;
+  font-size: 1.75rem;
+}
+
+.custom-bullets-text {
+  padding: 1rem;
+}
+.custom-bullets {
+  list-style: none; /* Remove default bullets */
+  padding-top: 1.5rem;
+  margin: 0;
+}
+
+.custom-bullets li {
+  background-image: url('./images/donut_point.png'); /* Path to your donut icon */
+  background-size: 20px 20px; /* Adjust the size of the icon */
+  padding: 1rem;
+  background-repeat: no-repeat;
+  background-position: 0 50%; /* Align the icon vertically center */
+  padding-left: 3rem; /* Space for the icon and text */
+  margin-bottom: 8px; /* Space between list items */
+}
+
+
 /* Tablet Styles */
 @media (min-width: 769px) and (max-width: 1024px) {
   .container {
@@ -273,5 +398,78 @@ span {
 
   .main-content .image {
     max-width: 60%;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 767px) {
+  .info-block-container,
+  .about-us-container {
+    flex-direction: column;
+  }
+  .contact-form-container {
+    width: 90%;
+  }
+  .chef-image,
+  .donut-people-image {
+    width: 100%;
+    height: auto;
+  }
+  .we-provide-text {
+    flex-direction: column;
+  }
+
+
+  .info-block-container {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 0; /* Remove padding to use full width */
+  }
+
+  .about-us-container {
+      flex-direction: column;
+      align-items: center;
+      width: 100%; /* Ensure full width */
+      padding: 0; /* Remove padding to use full width */
+  }
+
+  h3 {
+    color: var(--black);
+  }
+
+  .we-provide-container {
+      color: var(--black);
+      flex-direction: column;
+      align-items: center;
+      width: 100%; /* Ensure full width */
+      padding: 0; /* Remove padding to use full width */
+  }
+
+  .chef-image,
+  .donut-people-image {
+      width: 100%;
+      height: auto;
+  }
+
+  .info-block,
+  .about-us,
+  .we-provide-text {
+      padding: 1em;
+  }
+
+}
+
+
+@media (max-width: 767px) {
+  .info-block-container,
+  .about-us-container {
+      flex-direction: column;
+  }
+
+  .info-block-container img,
+  .about-us-container img {
+      order: -1; /* Move images above text blocks */
+      width: 100%; /* Make images responsive */
   }
 }
