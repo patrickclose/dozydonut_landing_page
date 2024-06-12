@@ -374,6 +374,7 @@ html {
   list-style: none; /* Remove default bullets */
   padding-top: 1.5rem;
   margin: 0;
+  font-size: 1.3rem;
 }
 
 .paragraph-main {
