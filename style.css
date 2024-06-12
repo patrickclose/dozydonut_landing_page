@@ -8,6 +8,17 @@
   --cream: #fdf8ed;
 }
 
+.headings-main {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 3.975rem;
+  text-transform: none;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
 .logo {
   padding-left: 1rem;
 }
@@ -294,10 +305,6 @@ body {
   align-items: center;
 }
 
-p {
-  font-size: 1.2rem;
-}
-
 .info-block {
   color: var(--black);
   display: flex;
@@ -357,6 +364,17 @@ p {
   list-style: none; /* Remove default bullets */
   padding-top: 1.5rem;
   margin: 0;
+}
+
+.paragraph-main {
+  font-family: Merriweather, serif;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1.938;
+  text-transform: none;
+  color: var(--black);
 }
 
 .custom-bullets li {
