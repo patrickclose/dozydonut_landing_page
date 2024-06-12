@@ -26,7 +26,9 @@
 body {
   font-family: 'Merriweather', serif;
   background-color: var(--navy);
-  color: #ffffff;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 .container {
@@ -42,6 +44,14 @@ body {
   padding: 20px 0; 
   background-color: var(--navy);
 }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
 
 .header .logo img {
   height: 100px; /* Adjust height as needed */
