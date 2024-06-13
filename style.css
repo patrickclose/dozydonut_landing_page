@@ -409,6 +409,7 @@ html {
 }
 
 .paragraph-main {
+  padding-right: 2rem;
   font-family: Merriweather, serif;
   font-size: 1.2rem;
   font-style: normal;
