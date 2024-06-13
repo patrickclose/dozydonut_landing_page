@@ -136,6 +136,17 @@ html {
   }
 }
 
+.footer_heading {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 2.875rem;
+  text-transform: none;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+
 .header_heading {
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 3rem;
