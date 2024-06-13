@@ -391,7 +391,7 @@ html {
 .custom-bullets li {
   background-image: url('./images/donut_point.png'); /* Path to your donut icon */
   background-size: 20px 20px; /* Adjust the size of the icon */
-  padding: 1rem;
+  padding: 0.5rem;
   background-repeat: no-repeat;
   background-position: 0 50%; /* Align the icon vertically center */
   padding-left: 3rem; /* Space for the icon and text */
