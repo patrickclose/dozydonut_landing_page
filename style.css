@@ -8,6 +8,17 @@
   --cream: #fdf8ed;
 }
 
+.footer_text {
+  font-family: Merriweather, serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1.938;
+  text-transform: none;
+  color: var(--cream);
+}
+
 .contact-block {
   display: flex;
   flex-direction: column;
