@@ -8,6 +8,11 @@
   --cream: #fdf8ed;
 }
 
+.contact-block {
+  display: flex;
+  justify-content: center;
+}
+
 .headings-main {
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 3rem;
