@@ -1,8 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger-menu');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-active');
+// scripts.js
+function loadCalendlyWidget() {
+    Calendly.initInlineWidget({
+        url: 'https://calendly.com/contact-dozydonut/60min?primary_color=eb6eb6',
+        parentElement: document.getElementById('calendly-inline-widget'),
+        prefill: {},
+        utm: {}
     });
-});
+}
+
+window.onload = function() {
+    loadCalendlyWidget();
+}
