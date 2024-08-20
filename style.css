@@ -654,7 +654,7 @@ III. PAGES ACCESSED FROM DOZY DESIGNS HOME
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(245,245,245,1) 100%);
+    /* background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(245,245,245,1) 100%); */
     opacity: 0;
     transition: opacity 0.3s ease-out;
     pointer-events: none;
@@ -804,17 +804,21 @@ details[open] .toggle-paragraph {
     text-align: center;
     background-color: whitesmoke;
     background: linear-gradient(to bottom, 
-      rgba(245,245,245,0) 0%,
-      rgba(245,245,245,0.2) 10%,
-      rgba(245,245,245,0.4) 20%,
-      rgba(245,245,245,0.6) 30%,
-      rgba(245,245,245,0.8) 40%,
-      rgba(245,245,245,1) 50%,
-      rgba(245,245,245,1) 100%
-    );
+    rgba(245,245,245,0) 0%,   /* Start with transparent */
+    rgba(245,245,245,0.2) 10%, 
+    rgba(245,245,245,0.4) 20%, 
+    rgba(245,245,245,0.6) 30%, 
+    rgba(245,245,245,0.8) 40%, 
+    rgba(245,245,245,1) 50%,  /* Solid color in the middle */
+    rgba(245,245,245,0.8) 60%, 
+    rgba(245,245,245,0.6) 70%, 
+    rgba(245,245,245,0.4) 80%, 
+    rgba(245,245,245,0.2) 90%, 
+    rgba(245,245,245,0) 100%  /* End with transparent */
+  );
+  
     padding-top: 200px; /* Increase this value to start the content lower */
     margin-top: -75px; /* Adjust this value as needed */
-    padding-bottom: 320px;
     box-sizing: border-box;
     position: relative;
 }
@@ -1185,7 +1189,6 @@ details[open] .toggle-paragraph {
     position: relative;
     max-width: 100%;
     margin: 0;
-    padding: 320px 20px;
     background: transparent;
     display: flex;
     justify-content: center;
@@ -1199,7 +1202,6 @@ details[open] .toggle-paragraph {
     left: 0;
     right: 0;
     height: 100px;
-    background: linear-gradient(to bottom, rgba(245,245,245,0), #f5f5f5);
 }
 
 .about-content {
@@ -1219,10 +1221,9 @@ details[open] .toggle-paragraph {
 }
 
 .about-image {
-    float: right;
+    display: flex;
+    flex-direction: column;
     width: 40%;
-    margin-left: 30px;
-    margin-bottom: 20px;
 }
 
 .team-photo {
