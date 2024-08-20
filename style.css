@@ -241,6 +241,11 @@ II. PAGES ACCESSED FROM HOME NAV
     align-items: center;
     padding: 20px 0;
 }
+@media screen and (max-width: 791px) {
+    .header-home {
+        flex-direction: row-reverse;
+    }
+}
 
 .logo-home {
     font-size: 24px;
@@ -450,11 +455,6 @@ II. PAGES ACCESSED FROM HOME NAV
     background: linear-gradient(180deg, #ffebc5, whitesmoke) fixed;
 }
 
-.arrow {
-    align-items: center;
-    font-size: 1.5em;
-}
-
 .arrow-link {
     padding-top: 30px;
     display: block;
@@ -485,6 +485,19 @@ a.arrow-link:hover {
     text-align: center;
 }
 
+@media screen and (max-width: 791px) {
+    .h1-dozy-ai {
+        text-align: left;
+    }
+    .h1-our-story {
+        text-align: left;
+    }
+    .dozy-ai-subtitle {
+        text-align: left;
+    }
+}
+
+
 .h2-dozy-ai, .h2-our-story {
     font-size: 1.8em;
     color: black;
@@ -509,7 +522,21 @@ a.arrow-link:hover {
     margin-bottom: 40px;
 }
 
+.ul-dozy-ai {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ol-dozy-ai {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .ul-dozy-ai, .ol-dozy-ai {
+    font-weight: 100;
+    padding-top: 10px;
     margin-left: 20px;
     margin-bottom: 20px;
 }
