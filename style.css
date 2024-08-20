@@ -287,17 +287,18 @@ II. PAGES ACCESSED FROM HOME NAV
 
 .hero-home {
     text-align: center;
-    padding: 100px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 80px); /* Subtract header height */
+    min-height: calc(100vh - 80px);
 }
 @media screen and (max-width: 791px) {
     .hero-home {
         text-align: left;
         align-items: flex-start;
+        justify-content: initial;
+        min-height: 0;
     }
 }
 
@@ -653,10 +654,16 @@ III. PAGES ACCESSED FROM DOZY DESIGNS HOME
     margin-bottom: 140px;
     position: sticky;
     top: 0;
-    height: 100vh;
     z-index: 1;
     pointer-events: none; /* This allows clicks to pass through */
 }
+
+@media (max-width: 768px) {
+    .hero-container {
+        height: 500px;
+    }
+}
+
 
 .hero-content {
     position: relative;
@@ -678,10 +685,6 @@ III. PAGES ACCESSED FROM DOZY DESIGNS HOME
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    body {
-        height: 200vh; /* Make the page scrollable */
-    }
-
     .hero-container {
         animation: fade-out 0.75s ease-out forwards;
         animation-play-state: paused;
