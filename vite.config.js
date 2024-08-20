@@ -15,7 +15,7 @@ export default defineConfig({
         ourstory: 'our-story.html',
         packagebasic: 'package-basic.html',
         packageessential: 'package-essential.html',
-        package3: 'package-3.html',
+        packageprofessional: 'package-professional.html',
         payment: 'payment.html',
         products: 'products.html',
         thankyou: 'thank-you.html',
