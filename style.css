@@ -997,6 +997,7 @@ details[open] .toggle-paragraph {
     cursor: pointer;
     margin-top: auto;
     text-decoration: none;
+    z-index: 15;
 }
 
 .buy-btn-a:hover {
