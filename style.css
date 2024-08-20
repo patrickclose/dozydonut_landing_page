@@ -357,7 +357,7 @@ II. PAGES ACCESSED FROM HOME NAV
 /* Products.html */
 
 .products-body {
-    background: linear-gradient(180deg, #ffebc5, #00c9ec) fixed;
+    background: linear-gradient(180deg, #ffebc5, whitesmoke) fixed;
 } 
 
 .products-container {
@@ -447,7 +447,28 @@ II. PAGES ACCESSED FROM HOME NAV
 }
 
 .body-dozy-ai {
-    background: linear-gradient(180deg, whitesmoke, #00c9ec) fixed;
+    background: linear-gradient(180deg, #ffebc5, whitesmoke) fixed;
+}
+
+.arrow {
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.arrow-link {
+    padding-top: 30px;
+    display: block;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+a.arrow-link:hover {
+    color:#979797;
+}
+
+
+.arrow-link:visited {
+    color: black;
 }
 
 .dozy-ai-subtitle {
