@@ -1250,6 +1250,8 @@ details[open] .toggle-paragraph {
     text-align: left;
 }
 
+
+
 .about-image {
     display: flex;
     flex-direction: column;
@@ -1406,7 +1408,11 @@ details[open] .toggle-paragraph {
     }
 }
 
-
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+}
 
 @media (max-width: 1200px) {
     .hero-container, .services-process-container, .pricing-container > div {
