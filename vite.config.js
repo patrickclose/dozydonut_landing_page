@@ -5,7 +5,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
-        about: 'about.html',
+        ourstory: 'our-story.html',
         contact: 'contact.html',
         checkoutbilling: 'checkout-billing.html',
         checkoutconsultation: 'checkout-consultation.html',
