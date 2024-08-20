@@ -1465,13 +1465,14 @@ details[open] .toggle-paragraph {
 }
 
 .package-heading {
+    line-height: 1.2;
     font-family: 'Merriweather', serif;
     font-size: 2.8em;
     font-weight: 700;
-    margin-bottom: 20px;
     text-align: center;
     color: #2C3E50;
 }
+
 
 .package-info {
     background-color: whitesmoke;
@@ -1488,20 +1489,28 @@ details[open] .toggle-paragraph {
     color: #333;
 }
 
-.package-price {
+.package-price, .package-price-big {
     font-family: 'Merriweather', serif;
-    font-size: 3.5em;
+    font-size: 1.2em;
     font-weight: 700;
+    line-height: 1.2;
     color: #00A8CC;
-    margin-top: 0;
-    margin-bottom: 50px;
-    margin-right: 0;
-    margin-left: 0;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    padding: 0;
     text-align: center;
     position: relative;
-    display: inline-block;
+    display: block;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.package-price-big {
+    font-size: 2em;
+}
+
+.dollar-sign {
+    font-size: 0.65em;
 }
 
 .package-price::before {
@@ -1575,13 +1584,6 @@ details[open] .toggle-paragraph {
 .feature-item p {
     margin: 0;
     font-size: 0.9em;
-}
-
-.steps {
-    display: flex;
-    justify-content: space-between;
-    margin: 60px 0;
-    position: relative;
 }
 
 .steps::before {
