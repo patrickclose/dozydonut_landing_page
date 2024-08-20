@@ -374,14 +374,12 @@ II. PAGES ACCESSED FROM HOME NAV
     color: black;
 }
 
-.product-card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    margin-bottom: 40px;
-    overflow: hidden;
+@media (max-width: 768px) {
+    .products-heading {
+        text-align: left;
+    }
 }
+
 
 .product-content {
     flex: 2;
