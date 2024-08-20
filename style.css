@@ -233,6 +233,13 @@ II. PAGES ACCESSED FROM HOME NAV
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
+    padding-top: 60px;
+}
+
+@media screen and (max-width: 791px) {
+    .home-container {
+        padding-top: 0px;
+    }
 }
 
 .header-home {
