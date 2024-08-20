@@ -1471,6 +1471,12 @@ details[open] .toggle-paragraph {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+@media screen and (max-width: 791px) {
+    .package-card {
+        text-align: left;
+    }
+}
+
 .package-heading {
     line-height: 1.2;
     font-family: 'Merriweather', serif;
@@ -1478,6 +1484,12 @@ details[open] .toggle-paragraph {
     font-weight: 700;
     text-align: center;
     color: #2C3E50;
+}
+
+@media (max-width: 768px) {
+    .package-heading {
+        text-align: left;
+    }
 }
 
 
@@ -1496,6 +1508,12 @@ details[open] .toggle-paragraph {
     color: #333;
 }
 
+@media (max-width: 768px) {
+    .description {
+        text-align: left;
+    }
+}
+
 .package-price, .package-price-big {
     font-family: 'Merriweather', serif;
     font-size: 1.2em;
@@ -1512,20 +1530,24 @@ details[open] .toggle-paragraph {
     transform: translateX(-50%);
 }
 
+@media (max-width: 768px) {
+    .package-price {
+        text-align: left;
+    }
+}
+
 .package-price-big {
     font-size: 2em;
 }
 
-.dollar-sign {
-    font-size: 0.65em;
+@media (max-width: 768px) {
+    .package-price-big {
+        text-align: left;
+    }
 }
 
-.package-price::before {
-    content: '$';
-    font-size: 0.5em;
-    position: absolute;
-    top: 0;
-    left: -20px;
+.dollar-sign {
+    font-size: 0.65em;
 }
 
 .h2-package-subheading {
