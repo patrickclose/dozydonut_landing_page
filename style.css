@@ -512,6 +512,7 @@ a.arrow-link:hover {
     }
     .dozy-ai-subtitle {
         text-align: left;
+        margin-left: 0px;
     }
 }
 
