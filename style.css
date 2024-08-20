@@ -656,13 +656,13 @@ III. PAGES ACCESSED FROM DOZY DESIGNS HOME
     position: sticky;
     top: 0;
     z-index: 1;
-    height: 135vw;
+    height: 85vw;
     pointer-events: none; /* This allows clicks to pass through */
 }
 
 @media (max-width: 768px) {
     .hero-container {
-        height: 300vw;
+        height: 200vw;
     }
 }
 
