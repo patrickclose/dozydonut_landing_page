@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Dozy Designs</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="package-body">
+    <div class="checkout-container">
+        <div class="checkout-form">
+            <h1 class="checkout-heading">Checkout</h1>
+            <div class="checkout-steps">
+                <div class="checkout-step">
+                    <div class="checkout-step-number">1</div>
+                    <h3 class="checkout-step-title">Contact Info</h3>
+                    <p class="checkout-step-description">Enter your details.</p>
+                </div>
+                <div class="checkout-step">
+                    <div class="checkout-step-number">2</div>
+                    <h3 class="checkout-step-title">Consultation</h3>
+                    <p class="checkout-step-description">Schedule your free strategy call.</p>
+                </div>
+                <div class="checkout-step active">
+                    <div class="checkout-step-number">3</div>
+                    <h3 class="checkout-step-title">Checkout</h3>
+                    <p class="checkout-step-description">Complete your order.</p>
+                </div>
+            </div>
+            
+            <div class="express-payment">
+                <h2 class="express-payment-heading">Express Payment</h2>
+                <div class="express-buttons">
+                    <button class="express-button">
+                        <img src="/api/placeholder/100/40" alt="PayPal" />
+                    </button>
+                    <button class="express-button">
+                        <img src="/api/placeholder/100/40" alt="Google Pay" />
+                    </button>
+                </div>
+            </div>
+            
+            <div class="payment-methods">
+                <h2>Select Payment Method</h2>
+                <div class="payment-method">
+                    <img src="/api/placeholder/40/40" alt="Credit Card" />
+                    <span>Credit / Debit Card</span>
+                </div>
+                <div class="payment-method">
+                    <img src="/api/placeholder/40/40" alt="PayPal" />
+                    <span>PayPal</span>
+                </div>
+            </div>
+            
+            <div class="card-details">
+                <h2>Card Details</h2>
+                <div class="checkout-form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                </div>
+                <div class="checkout-form-group">
+                    <label for="card-name">Name on Card</label>
+                    <input type="text" id="card-name" placeholder="John Doe" required>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <div class="checkout-form-group" style="flex: 1;">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" id="expiry" placeholder="MM / YY" required>
+                    </div>
+                    <div class="checkout-form-group" style="flex: 1;">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="123" required>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="checkout-submit-button"><a href="thank-you.html" class="logo-link">Place Order</a></button>
+        </div>
+        
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="order-item">
+                <span>Professional Package</span>
+                <span>$9,995.00</span>
+            </div>
+            <div class="order-item">
+                <span>Consultation</span>
+                <span>$0.00</span>
+            </div>
+            <div class="order-total">
+                <span>Total</span>
+                <span>$9,995.00</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
