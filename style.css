@@ -1441,7 +1441,7 @@ details[open] .toggle-paragraph {
   
   @media (max-width: 480px) {
     .h1-design {
-      font-size: 2em;
+      font-size: 3em;
     }
   
     .cta-button {
