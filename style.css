@@ -434,7 +434,16 @@ II. PAGES ACCESSED FROM HOME NAV
 
 .main-grid {
     display: grid;
+    margin-top: 100px;
 }
+
+@media (max-width: 768px) {
+    .main-grid {
+        margin-top: 0px;
+    }
+}
+
+
 
 .main-content {
     margin-top: 35px;
@@ -1079,6 +1088,12 @@ details[open] .toggle-paragraph {
     margin-top: 65px;
 } 
 
+@media (max-width: 768px) {
+    .header-design {
+        margin-top: 0px;
+    }
+}
+
 .design-nav {
     margin-top: 20px;
 }
@@ -1387,7 +1402,7 @@ details[open] .toggle-paragraph {
   
   @media (max-width: 768px) {
     .hero-content {
-      padding: 20px;
+      padding: 0px;
     }
   
     .h1-design {
