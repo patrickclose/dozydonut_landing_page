@@ -388,7 +388,8 @@ II. PAGES ACCESSED FROM HOME NAV
 
 .product-content {
     flex: 2;
-    padding: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .product-image {
