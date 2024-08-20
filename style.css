@@ -282,6 +282,13 @@ II. PAGES ACCESSED FROM HOME NAV
     justify-content: center;
     min-height: calc(100vh - 80px); /* Subtract header height */
 }
+@media screen and (max-width: 791px) {
+    .hero-home {
+        text-align: left;
+        align-items: flex-start;
+    }
+}
+
 
 .h1-home {
     font-size: 4em;
