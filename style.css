@@ -1098,6 +1098,7 @@ details[open] .toggle-paragraph {
     justify-content: space-between;
     align-items: start;
     margin-top: 65px;
+    padding-bottom: 400px;
 } 
 
 @media (max-width: 768px) {
