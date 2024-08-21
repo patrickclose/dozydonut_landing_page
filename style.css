@@ -143,6 +143,7 @@ body {
 }
 
 .footer-nav {
+    z-index: 15;
     display: flex;
     gap: 30px;
 }
