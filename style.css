@@ -161,6 +161,7 @@ body {
 }
 
 .logo-link {
+    z-index: 15;
     text-decoration: none;
     color: black;
 }
