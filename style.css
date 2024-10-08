@@ -142,22 +142,22 @@ body {
     margin-bottom: 40px;
 }
 
-    a:focus,
-    button:focus,
-    input:focus,
-    select:focus,
-    textarea:focus {
-        outline: 3px solid #007bff; /* Noticeable blue outline */
-        outline-offset: 2px; /* Space between the element and the outline */
-    }
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #007bff; /* Noticeable blue outline */
+    outline-offset: 2px; /* Space between the element and the outline */
+}
 
-    .return-link:focus {
-        outline: 3px solid #ff5722; /* A different color for the return link */
-    }
+.return-link:focus {
+    outline: 3px solid #ff5722; /* A different color for the return link */
+}
 
-    .footer-nav a:focus {
-        outline: 2px dashed #28a745; /* Dashed green outline for footer links */
-    }
+.footer-nav a:focus {
+    outline: 2px dashed #28a745; /* Dashed green outline for footer links */
+}
 
 .footer-nav {
     z-index: 15;
@@ -2029,7 +2029,6 @@ V. PAGES ACCESSED FROM CHECKOUT-BILLING
 }
 
 .calendly-inline-widget {
-    min-width: 320px;
     height: 630px;
 }
 
