@@ -1556,6 +1556,13 @@ details[open] .toggle-paragraph {
     color: #2C3E50;
 }
 
+@media (max-width: 768px) {
+    .consultation-heading {
+        font-size: 1.8em;
+    }
+}
+
+
 .consultation-description {
     text-align: center;
     font-size: 1.2em;
@@ -1564,6 +1571,13 @@ details[open] .toggle-paragraph {
     margin-bottom: 40px;
     color: #333;
 }
+
+@media (max-width: 768px) {
+    .consultation-description {
+        font-size: 0.9em;
+    }
+}
+
 
 .return-home-btn-free-consultation {
     text-align: center;
