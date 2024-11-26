@@ -1,0 +1,25 @@
+{
+    "rewrites": [
+      {
+        "source": "/products",
+        "destination": "/products/index.html"
+      },
+      {
+        "source": "/dozy-ai",
+        "destination": "/dozy-ai/index.html"
+      },
+      {
+        "source": "/contact",
+        "destination": "/contact/index.html"
+      },
+      {
+        "source": "/our-story",
+        "destination": "/our-story/index.html"
+      },
+      {
+        "source": "/free-consultation",
+        "destination": "/free-consultation/index.html"
+      }
+    ]
+  }
+  
