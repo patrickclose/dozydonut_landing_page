@@ -71,7 +71,7 @@
   </div>
   
   <div class="pricing-container">
-    <div>
+    <div class="inner-container">
       <h2 id="pricing">Get <u>10% off</u> our Essential package</h2>
       <p class="subtitle">Boost your business for less with $500 off our most popular package when you sign up as a first time customer with Dozy Donut.</p>
       <div class="price-box-container">
@@ -114,3 +114,90 @@
       </div>
     </div>
   </div>
+
+<style>
+
+
+.pricing-container {
+       width: 100vw;
+       position: relative;
+       left: 50%;
+       right: 50%;
+       margin-left: -50vw;
+       margin-right: -50vw;
+       text-align: center;
+       background: linear-gradient(to bottom, 
+           rgba(245,245,245,0) 0%,
+           rgba(245,245,245,0.2) 10%, 
+           rgba(245,245,245,0.4) 20%, 
+           rgba(245,245,245,0.6) 30%, 
+           rgba(245,245,245,0.8) 40%, 
+           rgba(245,245,245,1) 50%,
+           rgba(245,245,245,0.8) 60%, 
+           rgba(245,245,245,0.6) 70%, 
+           rgba(245,245,245,0.4) 80%, 
+           rgba(245,245,245,0.2) 90%, 
+           rgba(245,245,245,0) 100%
+       );
+       padding-top: 200px;
+       margin-top: -75px;
+       box-sizing: border-box;
+   }
+
+
+  .inner-container {
+       max-width: 1600px;
+       width: 100%;
+       margin: 0 auto;
+       padding: 0 20px;
+   }
+
+   .price-box-container {
+       display: flex;
+       justify-content: center;
+       gap: 20px;
+       max-width: 1400px;
+       margin: 0 auto;
+       padding: 0 20px;
+   }
+
+   .pricing-container h2 {
+       font-size: 2.5em;
+       font-weight: bold;
+       margin-bottom: 10px;
+   }
+
+   @media (max-width: 480px) {
+       .pricing-container h2 {
+           font-size: 2em;
+       }
+   }
+
+   .price-box {
+      flex: 1;
+      min-width: 250px;
+      max-width: 350px;
+      background-color: whitesmoke;
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      text-align: left;
+      overflow: hidden;
+  }
+
+  .price-box h2 {
+    font-family: 'Merriweather', serif;
+    margin-top: 40px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .price-box p {
+      font-weight: 100;
+      line-height: 1.5;
+      margin-bottom: 20px;
+  }
+</style>

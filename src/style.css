@@ -886,68 +886,8 @@ details[open] .toggle-paragraph {
     }
 }
 
-.pricing-container {
-    max-width: 100%;
-    width: 100%;
-    text-align: center;
-    background-color: whitesmoke;
-    background: linear-gradient(to bottom, 
-    rgba(245,245,245,0) 0%,   /* Start with transparent */
-    rgba(245,245,245,0.2) 10%, 
-    rgba(245,245,245,0.4) 20%, 
-    rgba(245,245,245,0.6) 30%, 
-    rgba(245,245,245,0.8) 40%, 
-    rgba(245,245,245,1) 50%,  /* Solid color in the middle */
-    rgba(245,245,245,0.8) 60%, 
-    rgba(245,245,245,0.6) 70%, 
-    rgba(245,245,245,0.4) 80%, 
-    rgba(245,245,245,0.2) 90%, 
-    rgba(245,245,245,0) 100%  /* End with transparent */
-  );
-  
-    padding-top: 200px; /* Increase this value to start the content lower */
-    margin-top: -75px; /* Adjust this value as needed */
-    box-sizing: border-box;
-    position: relative;
-}
-
-.pricing-container > div {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 100px 20px 0; /* Increased top padding */
-}
-
-.pricing-container h2 {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
 .services-container, .price-box-container {
     display: flex;
-}
-
-.price-box-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.price-box {
-    flex: 1;
-    min-width: 250px;
-    max-width: 350px;
-    background-color: whitesmoke;
-    border: 2px solid #000;
-    border-radius: 10px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    text-align: left;
-    overflow: hidden;
 }
 
 .price-box.recommended {
@@ -967,21 +907,6 @@ details[open] .toggle-paragraph {
     font-weight: 100;
     font-size: large;
     text-align: center;
-}
-
-.price-box h2 {
-    font-family: 'Merriweather', serif;
-    margin-top: 40px;
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.price-box p {
-    font-size: 1em;
-    font-weight: 100;
-    line-height: 1.5;
-    margin-bottom: 20px;
 }
 
 .price {
@@ -1546,10 +1471,6 @@ details[open] .toggle-paragraph {
   
     .toggle-heading {
       font-size: 1.2em;
-    }
-  
-    .pricing-container h2 {
-      font-size: 2em;
     }
   
     .subtitle {
