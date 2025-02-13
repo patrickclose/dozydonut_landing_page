@@ -163,6 +163,7 @@
     }
 
     onMount(() => {
+        loading = false;
         ctx = canvas.getContext('2d');
 
         worker = new Worker(new URL('../ImageProcessor/imageWorker.js', import.meta.url), { type: 'module' });
