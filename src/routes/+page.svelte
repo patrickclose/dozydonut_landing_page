@@ -200,4 +200,48 @@
       line-height: 1.5;
       margin-bottom: 20px;
   }
+
+  /* Web-Design.html */
+
+.hero-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    padding-top: 0;
+    margin-bottom: 140px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: 85vw;
+    pointer-events: none; /* This allows clicks to pass through */
+}
+
+.hero-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(245,245,245,1) 100%); */
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        height: 200vw;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .hero-container {
+        animation: fade-out 0.75s ease-out forwards;
+        animation-play-state: paused;
+        animation-delay: calc(var(--scroll) * -1s);
+    }
+}
 </style>

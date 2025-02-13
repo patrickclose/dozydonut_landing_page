@@ -1,7 +1,22 @@
 <script>
+    import { onMount } from 'svelte';
     export let checked = false;
     export let scrolled = false;
     export let menuOpen = false;
+
+    // // Update `scrolled` state when the page is scrolled
+    // onMount(() => {
+    //     const handleScroll = () => {
+    //         scrolled = window.scrollY > 50;
+    //     };
+
+    //     window.addEventListener('scroll', handleScroll);
+
+    //     // Cleanup the event listener
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // });
 </script>
 
 <label class={`cursor-pointer`}>
@@ -12,7 +27,7 @@
         stroke="currentColor" 
         stroke-width="5" 
         class="w-12 h-12 text-gray-700 transition-transform duration-300"
-        class:text-off-white={!menuOpen && scrolled}
+        class:text-off-white={menuOpen || scrolled}
         class:text-gray-700={!menuOpen && !scrolled}
     >
         <path class="top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
@@ -59,5 +74,9 @@
         .middle {
             transform: rotate(90deg);
         }
+    }
+
+    .text-off-white {
+        color: #f0f0f0;
     }
 </style>

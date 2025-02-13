@@ -153,11 +153,9 @@
         position: fixed;
         left: 0;
         width: 100%;
-        background-color: black;
+        background-color: rgba(36, 36, 36, 0.9); /* Match the faded background */
         z-index: 29;
         padding: 2rem 0;
-        /* Add these properties for smoother animation */
-        top: var(--header-height, 64px); /* Adjust based on your header height */
         overflow: hidden;
     }
 
@@ -222,7 +220,7 @@
     }
 
     .bg-black {
-        background-color: black;
+        background-color: rgba(36, 36, 36, 0.95);
     }
 
     .text-gray-800 {
@@ -237,17 +235,48 @@
         color: white;
     }
 
-    .logo a {
+    a {
         font-size: 1.75rem; /* Slightly larger for emphasis */
     }
 
-    .nav ul {
-        gap: 1rem; /* Spacing between links */
+    ul {
+        gap: 1rem;
     }
 
-    .nav ul li a {
-        font-size: 1rem; /* Standardize link size */
+    ul li a {
+        font-size: 1.1rem; /* Standardize link size */
+        position: relative;
+        color: inherit; /* Maintain text color */
+        text-decoration: none; /* Remove default underline */
+        padding-bottom: 2px; /* Space for the underline */
+        transition: color 0.2s ease-in-out; /* Smooth text color change */
     }
+
+    ul li a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background-color: currentColor; /* Match underline color to text color */
+        transition: width 0.3s ease, left 0.3s ease; /* Smooth animation */
+        /* transform: translateX(-50%); */
+    }
+
+    .text-gray-800::after {
+        background-color: black; /* Black underline for black text */
+    }
+
+    ul li a:hover::after {
+        width: 100%; /* Expand underline to full width */
+        left: 0; /* Center align it */
+    }
+
+    .text-white::after {
+        background-color: white; /* White underline for white text */
+    }
+
 </style>
 
 
