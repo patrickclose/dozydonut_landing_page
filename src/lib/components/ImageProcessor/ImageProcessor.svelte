@@ -3,7 +3,6 @@
 
     // References to DOM elements
     let canvas;
-    let downloadLink;
     let loading;
     let fileInput;
     let ctx;
@@ -162,6 +161,63 @@
       lineStrength = DEFAULT_VALUES.lineStrength;
     }
 
+    // Add download settings
+    const downloadSettings = {
+      maxWidth: 2000,
+      format: 'image/jpeg',
+      quality: 0.85
+    };
+
+    async function downloadProcessedImage() {
+        if (!canvas) return;
+        
+        try {
+            loading = true;
+            
+            // Create a temporary canvas for resizing
+            const tempCanvas = document.createElement('canvas');
+            const scale = Math.min(1, downloadSettings.maxWidth / canvas.width);
+            tempCanvas.width = canvas.width * scale;
+            tempCanvas.height = canvas.height * scale;
+            
+            // Draw scaled image to temp canvas
+            const tempCtx = tempCanvas.getContext('2d');
+            tempCtx.imageSmoothingEnabled = true;
+            tempCtx.imageSmoothingQuality = 'high';
+            tempCtx.drawImage(canvas, 0, 0, tempCanvas.width, tempCanvas.height);
+            
+            // Convert to blob with compression
+            const blob = await new Promise((resolve) => {
+                tempCanvas.toBlob(
+                    (blob) => resolve(blob),
+                    downloadSettings.format,
+                    downloadSettings.quality
+                );
+            });
+            
+            if (!blob) throw new Error('Failed to create image blob');
+            
+            // Create and trigger download
+            const url = URL.createObjectURL(blob);
+            const extension = downloadSettings.format === 'image/jpeg' ? 'jpg' : 'png';
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `processed-image.${extension}`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Show file size in console for debugging
+            console.log(`Downloaded image size: ${(blob.size / 1024).toFixed(2)}KB`);
+        } catch (error) {
+            console.error('Download failed:', error);
+            alert('Failed to download image. Please try again.');
+        } finally {
+            loading = false;
+        }
+    }
+
     onMount(() => {
         loading = false;
         ctx = canvas.getContext('2d');
@@ -171,9 +227,6 @@
         worker.onmessage = function (event) {
             ctx.putImageData(event.data, 0, 0);
             const processedImageURL = canvas.toDataURL('image/png');
-            downloadLink.href = processedImageURL;
-            downloadLink.download = 'processed-sketch.png';
-            downloadLink.style.display = 'inline-block';
             loading = false;
         };
     });
@@ -263,9 +316,13 @@
         </button>
       </div>
     </div>
-    <a id="downloadLink" bind:this={downloadLink} style="display: none;">
-      Download Processed Image
-    </a>
+    <button 
+        on:click={downloadProcessedImage}
+        class="download-button"
+        disabled={!originalImageData || loading}
+    >
+        Download Processed Image
+    </button>
     {#if loading}
       <p>Processing ...</p>
     {/if}
@@ -343,21 +400,38 @@
       border: 1px solid #ccc;
       background: white;
     }
-    #downloadLink {
-      margin: 5px;
-      padding: 8px 16px;
-      background-color: #4caf50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
     #loading {
       margin-top: 10px;
       color: #666;
       display: none;
+    }
+
+    .download-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+    }
+
+    .download-button:hover:not(:disabled) {
+        background-color: #45a049;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .download-button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+
+    .download-button:active:not(:disabled) {
+        transform: translateY(0);
     }
   </style>
   
