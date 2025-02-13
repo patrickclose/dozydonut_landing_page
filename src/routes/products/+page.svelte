@@ -43,4 +43,14 @@
         We handle everything from the technical aspects of building a website to the creative elements of establishing your brand identity online.
       </p>
     </div>
+
+    <div class="product-content fade-in delay-1">
+      <h2 class="product-title fade-in delay-4">Dozy Apps</h2>
+      <p class="product-description fade-in delay-4">
+        Dozy Apps is a web application for image editing in your browser.
+      </p>
+      <div class="cta-buttons-home fade-in delay-3">
+        <a href="/dozy-app" class="cta-btn-home primary-btn-home">Try Out</a>
+      </div>
+    </div>
   </div>
