@@ -3,10 +3,11 @@
 
     // References to DOM elements
     let canvas;
-    let loading;
+    let loadingIndicator;
     let fileInput;
     let ctx;
     let originalImageData = null;
+    let loading;
 
     // Default values for sliders
     const DEFAULT_VALUES = {
@@ -57,40 +58,63 @@
     
     async function handleDrop(event) {
       event.preventDefault();
+      console.log()
       
-        // Try files first
+        // Handle direct file drops
         if (event.dataTransfer.files?.length > 0) {
-            const file = event.dataTransfer.files[0];
-            handleFile(file);
-            event.dataTransfer.clearData();
+            handleFile(event.dataTransfer.files[0]);
             return;
         }
 
-        // Handle Discord URL drags
-        const urlTypes = ['text/uri-list', 'text/plain'];
-        const url = urlTypes.map(t => event.dataTransfer.getData(t)).find(u => u.startsWith('http'));
-        if (url) {
+   // Handle Discord's special URL drops
+   const transfer = event.dataTransfer;
+   const urlTypes = ['text/uri-list', 'text/plain'];
+   const rawUrl = urlTypes.map(t => transfer.getData(t)).find(u => u && u.startsWith('http'));
+
+   if (rawUrl) {
             try {
-                // Validate Discord CDN URL
-                if (!url.match(/\.(png|jpe?g|gif|webp)$/i)) {
-                    throw new Error('Invalid image URL');
+                loading = true;
+                
+                // Parse and validate URL
+                const url = new URL(rawUrl);
+                const validExtensions = /\.(png|jpe?g|gif|webp)$/i;
+                if (!validExtensions.test(url.pathname)) {
+                    throw new Error('Unsupported image format');
                 }
 
-                // Use alternative CORS proxy
-                const proxyUrl = 'https://api.allorigins.win/raw?url=';
-                const response = await fetch(proxyUrl + encodeURIComponent(url));
+                // Use rotating CORS proxies
+                const proxies = [
+                    'https://corsproxy.org/?',
+                    'https://api.codetabs.com/v1/proxy/?quest='
+                ];
                 
-                if (!response.ok) throw new Error('Network response was not ok');
+                const response = await fetch(
+                    proxies[Math.floor(Math.random() * proxies.length)] + 
+                    encodeURIComponent(url.href)
+                );
+
+                if (!response.ok) throw new Error(`Failed to fetch: ${response.status}`);
                 
+                // Verify content type
+                const contentType = response.headers.get('content-type');
+                if (!contentType?.startsWith('image/')) {
+                    throw new Error('URL does not point to an image');
+                }
+
+                // Create File object with proper metadata
                 const blob = await response.blob();
-                const file = new File([blob], 'discord-image.png', { 
-                    type: blob.type || 'image/png' 
+                const filename = url.pathname.split('/').pop() || 'discord-image.png';
+                const file = new File([blob], filename, { 
+                    type: blob.type,
+                    lastModified: Date.now()
                 });
-                
+
                 handleFile(file);
             } catch (error) {
-                console.error('Error loading Discord image:', error);
-                alert('Could not load image from Discord. Please download and upload manually.');
+                console.error('Drop error:', error);
+                alert(`Image load failed: ${error.message}`);
+            } finally {
+                loading = false;
             }
         }
     }
@@ -245,7 +269,7 @@
       class:disabled={!controlsDisabled}
       aria-label={controlsDisabled ? 'Processing complete' : 'Upload image'}
       on:dragenter|preventDefault
-      on:drop={handleDrop}
+      on:drop|preventDefault={handleDrop}
       on:paste={handlePaste}
       on:click={triggerFileInput}
     >
