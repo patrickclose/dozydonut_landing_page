@@ -265,7 +265,9 @@
 
     <!-- Drop Zone using Svelte's declarative event directives -->
     <button class="drop-zone"
+      use:asDropZone={dropZoneConfig}
       tabindex="0"
+      class:has-image={previewSrc}
       class:disabled={!controlsDisabled}
       aria-label={controlsDisabled ? 'Processing complete' : 'Upload image'}
       on:dragenter|preventDefault

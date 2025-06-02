@@ -45,9 +45,9 @@
     </div>
 
     <div class="product-content fade-in delay-1">
-      <h2 class="product-title fade-in delay-4">Dozy Apps</h2>
+      <h2 class="product-title fade-in delay-4">Dozy App Gallery</h2>
       <p class="product-description fade-in delay-4">
-        Dozy Apps is a web application for image editing in your browser.
+        Check out our Dozy App Gallery, which include an image editor and a guided meditation.
       </p>
       <div class="cta-buttons-home fade-in delay-3">
         <a href="/dozy-app" class="cta-btn-home primary-btn-home">Try Out</a>
