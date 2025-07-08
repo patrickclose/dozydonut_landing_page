@@ -45,6 +45,28 @@
     </div>
 
     <div class="product-content fade-in delay-1">
+      <h2 class="product-title fade-in delay-5">Dozy Security</h2>
+      <p class="product-description fade-in delay-5">
+        Dozy Security offers professional penetration testing services to help organizations identify and address security vulnerabilities 
+        before they can be exploited by malicious actors. Our comprehensive security assessments provide detailed insights into your 
+        system's defensive capabilities and potential weak points.
+      </p>
+      <p class="product-description fade-in delay-5">
+        Our penetration testing methodology includes network security assessments, web application testing, wireless network evaluation, 
+        and social engineering assessments. We deliver actionable reports with prioritized recommendations, helping you strengthen your 
+        security posture while maintaining operational efficiency and regulatory compliance.
+      </p>
+      <p class="product-description fade-in delay-5">
+        Whether you're a small business looking to establish baseline security or an enterprise organization requiring comprehensive 
+        security validation, our tailored approach ensures that testing aligns with your specific infrastructure, compliance requirements, 
+        and business objectives.
+      </p>
+      <div class="cta-buttons-home fade-in delay-5">
+        <a href="/dozy-security" class="cta-btn-home primary-btn-home">Learn more</a>
+      </div>
+    </div>
+
+    <div class="product-content fade-in delay-1">
       <h2 class="product-title fade-in delay-4">Dozy App Gallery</h2>
       <p class="product-description fade-in delay-4">
         Check out our Dozy App Gallery, which include an image editor and a guided meditation.

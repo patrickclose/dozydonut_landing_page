@@ -986,7 +986,8 @@ details[open] .toggle-paragraph {
     display: inline-block;
     margin-top: 40px;
     padding: 20px 40px;
-    background-color: black;
+    background-color: #FF6B35; /* or #E63946 for the red-orange alternative */
+    /* background-color: black; */
     border: 3px solid black;
     color: whitesmoke;
     text-decoration: none;

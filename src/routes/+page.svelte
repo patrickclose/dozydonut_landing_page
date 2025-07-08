@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-  
+
     onMount(() => {
       window.addEventListener('scroll', () => {
         let scrollPosition = window.scrollY;
@@ -9,7 +9,9 @@
         document.body.style.setProperty('--scroll', scrollProgress);
       });
     });
+
   </script>
+
   
   <svelte:head>
     <title>Dozy Donut | Web Design & Development</title>
@@ -19,8 +21,13 @@
     <div class="hero-content">
       <div class="main-grid">
         <div class="main-content fade-in delay-1">
-          <h1 class="h1-design">We build websites for entrepreneurs who need a simpler way to showcase their brand online.</h1>
-          <a href="#pricing" class="cta-button fade-in delay-2">See Our Offers</a>
+          <h1 class="h1-design">The Fastest Way to Turn Your Web Traffic Into Revenue.</h1>
+          <div class="cta-box">
+            <a href="#pricing" class="cta-button-deal">Claim my performance checklist</a>
+            <p class="cta-micro-copy">No signup required.</p>
+
+          </div>
+
         </div>
       </div>
     </div>
@@ -115,8 +122,66 @@
     </div>
   </div>
 
+
+
 <style>
 
+  .cta-box {
+    display: grid;
+    justify-content: left;
+    grid-template-rows: auto auto;
+    gap: 0.3rem;
+    justify-items: center;
+    margin-top: 32px;
+    max-width: 100%;
+  }
+
+  .cta-micro-copy {
+  font-size: 0.9rem;
+  color: rgba(51, 51, 51, 0.8);
+  text-align: center;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.cta-button-deal {
+  background: #d43925;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.cta-button-deal:hover {
+    background-color: whitesmoke;
+    color: black;
+    border: 0px solid black;
+}
+
+
+.free-checklist {
+  align-content: last baseline;
+  text-align: left;
+  width: fit-content;
+}
+
+
+h1 {
+  text-wrap: pretty;  
+}
+
+a {
+  text-wrap: balance;
+}
 
 .pricing-container {
        width: 100vw;
@@ -234,6 +299,11 @@
 @media (max-width: 768px) {
     .hero-container {
         height: 200vw;
+    }
+
+    .cta-button-deal {
+        padding: 0.875rem 1.5rem; /* Instead of 14px 24px */
+        font-size: 1.1rem;
     }
 }
 
