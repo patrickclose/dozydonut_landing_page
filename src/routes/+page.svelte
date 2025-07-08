@@ -322,9 +322,9 @@ a {
 }
 
 @media (max-width: 768px) {
-    .hero-container {
+    /* .hero-container {
         height: 200vw;
-    }
+    } */
 
     .cta-button-deal {
         padding: 0.875rem 1.5rem; /* Instead of 14px 24px */

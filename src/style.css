@@ -512,14 +512,6 @@ II. PAGES ACCESSED FROM HOME NAV
     margin-top: 100px;
 }
 
-@media (max-width: 768px) {
-    .main-grid {
-        margin-top: 0px;
-    }
-}
-
-
-
 .main-content {
     margin-top: 35px;
     grid-column: 1 / 10;
