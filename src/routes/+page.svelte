@@ -22,7 +22,7 @@
       <div class="hero-content">
         <div class="main-grid">
           <div class="main-content fade-in delay-1">
-            <h1 class="h1-design">The Fastest Way to Turn Your Web Traffic Into Revenue.</h1>
+            <h1 class="h1-design">The <span class="italics">Fastest</span> Way to Turn Your Web Traffic Into Revenue.</h1>
             <div class="cta-box">
               <a href="#pricing" class="cta-button-deal">Claim my performance checklist</a>
               <p class="cta-micro-copy">No signup required.</p>
@@ -129,6 +129,14 @@
   </section>
 
 <style>
+  .italics {
+    color: #d43925;
+    font-style: italic;
+  }
+
+  .h1-design {
+    font-weight: 650;
+  }
 
   body {
     overflow-x: hidden;
@@ -279,7 +287,7 @@ a {
   }
 
   .price-box h2 {
-    font-family: 'Merriweather', serif;
+    font-family: 'Nourd', 'Merriweather', serif;
     margin-top: 40px;
     font-weight: bold;
     margin-bottom: 15px;

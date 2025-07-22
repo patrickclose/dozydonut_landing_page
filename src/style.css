@@ -66,6 +66,50 @@ I. UNIVERSAL STYLES
 @tailwind components;
 @tailwind utilities;
 
+  /* Import Nourd Font Family */
+  @font-face {
+    font-family: 'Nourd';
+    src: url('/fonts/nourd_regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Nourd';
+    src: url('/fonts/nourd_light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Nourd';
+    src: url('/fonts/nourd_medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Nourd';
+    src: url('/fonts/nourd_semi_bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Nourd';
+    src: url('/fonts/nourd_bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Nourd';
+    src: url('/fonts/nourd_heavy.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
+
+
 *, 
 *::before, 
 *::after {
@@ -101,9 +145,15 @@ img, picture, svg, video {
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: 'Merriweather', serif;
-    background: linear-gradient(135deg, #ffebc5, #00c9ec) fixed;
+    font-family: 'Nourd', 'Merriweather', serif;
+    background: linear-gradient(180deg, #ffffff, #00c9ec) fixed;
     color: black; 
+}
+
+@media (max-width: 768px) {
+    body {
+        background: white;
+    }
 }
 
 /* Footer */
@@ -111,7 +161,7 @@ body {
 .dozy-footer {
     color: black;
     padding: 60px 5%;
-    font-family: 'Merriweather', serif;
+    font-family: 'Nourd', 'Merriweather', serif;
     background-color: transparent;
 }
 
@@ -263,7 +313,7 @@ II. PAGES ACCESSED FROM HOME NAV
 /* Index.html */
 
 .body-home {
-    background: linear-gradient(180deg, #ffebc5, #00c9ec) fixed;
+    background: linear-gradient(180deg, #ffffff, #00c9ec) fixed;
 }
 
 .home-container {
@@ -641,7 +691,7 @@ a.arrow-link:hover {
 }
 
 .contact-heading {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Nourd', 'Merriweather Sans', sans-serif;
     font-size: 2.5em;
     font-weight: 400;
     text-align: center;
@@ -864,7 +914,7 @@ details[open] .toggle-paragraph {
 
 .price {
     display: flex;
-    font-family: 'Merriweather', serif;
+    font-family: 'Nourd', 'Merriweather', serif;
     font-size: 2.5em;
     font-weight: bold;
     margin: 5px 0;
@@ -894,7 +944,7 @@ details[open] .toggle-paragraph {
 .price-detail {
     font-size: 3em;
     display: flex;
-    font-family: 'Merriweather', serif;
+    font-family: 'Nourd', 'Merriweather', serif;
     font-size: 2.5em;
     font-weight: bold;
     margin: 5px 0;
@@ -1448,7 +1498,7 @@ details[open] .toggle-paragraph {
 }
 
 .consultation-heading {
-    font-family: 'Merriweather', serif;
+    font-family: 'Nourd', 'Merriweather', serif;
     font-size: 2.8em;
     font-weight: 700;
     margin-bottom: 20px;
@@ -1510,7 +1560,7 @@ details[open] .toggle-paragraph {
 
 .package-heading {
     line-height: 1.2;
-    font-family: 'Merriweather', serif;
+    font-family: 'Nourd', 'Merriweather', serif;
     font-size: 2.8em;
     font-weight: 700;
     text-align: center;
@@ -1546,7 +1596,7 @@ details[open] .toggle-paragraph {
 }
 
 .package-price, .package-price-big {
-    font-family: 'Merriweather', serif;
+    font-family: 'Nourd', 'Merriweather', serif;
     font-size: 1.2em;
     font-weight: 700;
     line-height: 1.2;
@@ -1750,7 +1800,7 @@ IV. PAGES ACCESSED FROM: PROFESSIONAL-PACKAGE, ESSENTIAL-PACKAGE, BASIC-PACKAGE
 }
 
 .billing-info-heading {
-    font-family: 'Merriweather', serif;
+    font-family: 'Nourd', 'Merriweather', serif;
     font-size: 2.8em;
     font-weight: 700;
     margin-bottom: 20px;
@@ -2004,7 +2054,7 @@ VI. PAGES ACCESSED FROM CHECKOUT-CONSULTATION
 }
 
 .checkout-heading {
-    font-family: 'Merriweather', serif;
+    font-family: 'Nourd', 'Merriweather', serif;
     font-size: 2.4em;
     font-weight: 700;
     margin-bottom: 20px;
@@ -2221,7 +2271,7 @@ VII. PAGES ACCESSED FROM CHECKOUT-SUMMARY
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Nourd', 'Merriweather Sans', sans-serif;
     background-color: #F8F9FA;
     color: #333;
 }
@@ -2297,7 +2347,7 @@ STANDALONE PAGE: LINK TO PAYMENT ONLY
 /* Payment.html */
 
 .billing-details-body {
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Nourd', 'Merriweather Sans', sans-serif;
     background-color: #F8F9FA;
     color: #333;
     line-height: 1.6;

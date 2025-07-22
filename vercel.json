@@ -5,6 +5,10 @@
         "destination": "/products/index.html"
       },
       {
+        "source": "/vending",
+        "destination": "/vending/index.html"
+      },
+      {
         "source": "/dozy-ai",
         "destination": "/dozy-ai/index.html"
       },

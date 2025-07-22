@@ -2,7 +2,8 @@
     import HamburgerMenu from './HamburgerMenu.svelte';
     import { onMount } from 'svelte';
     import { fly } from 'svelte/transition';
-
+    import { clickOutside } from '$lib/actions/clickOutside.js';
+    
     let scrolled = false;
     let menuOpen = false;
 
@@ -86,6 +87,15 @@
                         class="hover:text-gray-900 transition duration-200"
                         class:text-off-white={!menuOpen && scrolled}
                         class:text-white={menuOpen}
+                        href="/vending"
+                        >Smart Vending</a
+                    >
+                </li>
+                <li>
+                    <a
+                        class="hover:text-gray-900 transition duration-200"
+                        class:text-off-white={!menuOpen && scrolled}
+                        class:text-white={menuOpen}
                         href="/dozy-ai"
                         >Dozy AI</a
                     >
@@ -122,6 +132,7 @@
             <nav>
                 <ul class="flex flex-col items-center gap-2">
                     <li><a href="/products" on:click={() => menuOpen = false}>Products</a></li>
+                    <li><a href="/vending" on:click={() => menuOpen = false}>Smart Vending</a></li>
                     <li><a href="/dozy-ai" on:click={() => menuOpen = false}>Dozy AI</a></li>
                     <li><a href="/our-story" on:click={() => menuOpen = false}>Our Story</a></li>
                     <li><a href="/contact" on:click={() => menuOpen = false}>Contact</a></li>

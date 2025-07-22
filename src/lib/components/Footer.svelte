@@ -19,6 +19,7 @@
     <div class="footer-divider"></div>
     <div class="footer-middle">
       <nav class="footer-nav">
+        <a href="/vending">Smart Vending</a>
         <a href="/dozy-ai">Dozy AI</a>
         <a href="/web-design">Dozy Designs</a>
         <a href="/our-story">Our Story</a>
