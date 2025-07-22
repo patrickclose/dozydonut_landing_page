@@ -344,6 +344,10 @@
     display: none;
   }
 
+  .machine-image {
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  }
+
   @media (max-width: 768px) {
     .vending-machine-mobile {
       display: block;
