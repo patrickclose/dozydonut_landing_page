@@ -460,7 +460,7 @@
         }
 
         .full-width-services {
-            padding: 0 1rem;
+            padding: 0 4rem;
         }
     }
 
@@ -760,7 +760,8 @@
 
     /* Pricing Section */
     #pricing-section {
-        background: #ffffff;
+        padding-right: 3rem;
+        padding-left: 3rem;
     }
 
     .pricing-container {
@@ -771,8 +772,8 @@
 
     .inner-container {
         width: 100%;
-        padding: 0 2rem;
-        max-width: 800px;
+        padding: 0 4rem;
+        max-width: 1000px;
         margin: 0 auto;
     }
 
@@ -794,7 +795,7 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        text-align: left;
+        text-align: center;
         transition: var(--transition);
         box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
@@ -828,14 +829,13 @@
 
     .price-box h2 {
         font-size: 1.8rem;
-        margin: 1.5rem 0 1rem;
         font-weight: 700;
     }
 
     .price-box p {
         font-weight: 400;
         line-height: 1.6;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.5rem;
         flex-grow: 1;
     }
 
@@ -978,7 +978,7 @@
 
         .price-box-container {
             grid-template-columns: 1fr;
-            gap: 1.5rem;
+            gap: 3.5rem;
         }
         
         .recommended {

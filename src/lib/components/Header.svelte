@@ -53,7 +53,7 @@
     z-index: 1000;
     transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   }
 
   .bg-transparent {
@@ -79,7 +79,7 @@
     align-items: center;
     padding: 0 1rem;
     height: var(--header-height);
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     position: relative;
     z-index: 1001;
