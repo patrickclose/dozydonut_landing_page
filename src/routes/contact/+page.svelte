@@ -119,7 +119,7 @@
     color: var(--white);
     padding: 1rem 2rem;
     border: 2px solid var(--primary-color);
-    border-radius: 50px;
+    border-radius: 4px;
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
     font-weight: 600;

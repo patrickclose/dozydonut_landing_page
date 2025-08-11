@@ -76,7 +76,7 @@
     background: var(--primary-color);
     color: var(--white);
     padding: 1rem 2rem;
-    border-radius: 50px;
+    border-radius: 4px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;

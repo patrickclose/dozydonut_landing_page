@@ -170,7 +170,7 @@
     background: var(--primary-color);
     color: var(--white);
     padding: 0.8rem 2rem;
-    border-radius: 50px;
+    border-radius: 4px;
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
