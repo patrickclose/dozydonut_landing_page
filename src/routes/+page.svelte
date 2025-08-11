@@ -80,13 +80,13 @@
 
     <!-- Full Width Bar - Our Website Services -->
     <div class="full-width-services">
-        <h3 class="offerings-subheading">Our Website Services</h3>
+        <h2 class="offerings-subheading">Our Website Services</h2>
         <div class="dropdown-list">
             <details class="how-details web-dev-section" open>
                 <summary><h3 class="toggle-heading">Web Development and Performance</h3></summary>
                 <div class="toggle-paragraph web-dev-content">
                     <div class="web-dev-svg">
-                        <svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="480" height="480" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 116.093C36.7353 80.1737 75.5446 56 120 56C164.455 56 203.265 80.1737 224 116.093" stroke="#5F6368" stroke-width="0.5" stroke-dasharray="2 2"/>
                             <rect width="128" height="88" transform="matrix(1 0 -0.188924 0.981992 96 45)" fill="white" stroke="#5F6368"/>
                             <mask id="mask0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="79" y="45" width="145" height="87">
@@ -434,8 +434,8 @@
     /* Top Bar Layout */
     .top-bar-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 3rem;
+        gap: 10px;
+        padding: 20px;
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 1rem;
@@ -448,7 +448,7 @@
 
     /* Full Width Services Section */
     .full-width-services {
-        max-width: 1200px;
+        max-width: 800px;
         margin: 0 auto;
         padding: 0 2rem;
     }
@@ -467,6 +467,7 @@
     .dropdown-list {
         display: flex;
         flex-direction: column;
+        text-align: center;
         gap: 1rem;
     }
 
@@ -565,7 +566,7 @@
     .web-dev-svg svg {
         width: 100%;
         height: auto;
-        max-width: 160px;
+        max-width: 240px;
     }
 
     /* Responsive Design Section Styling */
@@ -607,7 +608,7 @@
         }
 
         .web-dev-svg svg {
-            max-width: 160px;
+            max-width: 240px;
         }
 
         .responsive-design-content {
@@ -750,10 +751,11 @@
     }
 
     .offerings-subheading {
-        font-size: 1.3rem;
+        font-size:2rem;
         margin: 3rem 0 1.5rem;
         font-weight: 600;
         color: var(--black);
+        text-align: center;
     }
 
     /* Pricing Section */
@@ -776,11 +778,12 @@
 
     .price-box-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+        gap: 1.75rem;
         max-width: 100%;
         margin: 0 auto;
         padding: 0;
+        text-align: center;
     }
 
     .price-box {
@@ -923,7 +926,7 @@
         }
 
         #hero-section {
-            padding: 4rem 1rem 3rem;
+            padding: 4rem 4rem 3rem;
         }
         
         .section-heading {
