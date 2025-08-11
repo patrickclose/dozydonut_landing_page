@@ -1,22 +1,20 @@
+<!-- File: src/routes/+layout.svelte -->
 <script>
-    import '../style.css';
     import Header from '$lib/components/Header.svelte';
+    // Import your global styles if you have them
+    import '../app.css';
     import Footer from '$lib/components/Footer.svelte';
-  </script>
-  
-  <Header />
-  <div class="home-container">
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    p {
+        font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+</style>
+
+<Header />
+<main>
     <slot />
-    <Footer />
-  </div>
-
-  <style lang="postcss">
-    .home-container {
-
-    }
-  
-    /* If you want to ensure the footer stays at the bottom */
-    :global(.home-container > :first-child) {
-      flex: 1;
-    }
-  </style>
+</main>
+<Footer />

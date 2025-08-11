@@ -1,3 +1,291 @@
+<script>
+  import { onMount } from 'svelte';
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+  :root {
+    --primary-color: #00c9ec;
+    --secondary-color: #000000;
+    --white: #ffffff;
+    --light-gray: #f8fafb;
+    --text-gray: #555;
+    --border-gray: #e0e0e0;
+    --transition: all 0.3s ease;
+  }
+
+  :global(body) {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light-gray);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--secondary-color);
+  }
+
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 4px;
+  }
+
+  .skip-link:focus {
+    top: 6px;
+  }
+
+  .main-content-dozy-ai {
+    background: var(--light-gray);
+    padding: 6rem 1rem 4rem;
+    min-height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .h1-dozy-ai {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .dozy-ai-subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .section-dozy-ai {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-gray);
+  }
+
+  .h2-dozy-ai {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  .h3-dozy-ai {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 2rem 0 1rem;
+    position: relative;
+  }
+
+  .h3-dozy-ai::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 1.5rem;
+    background: var(--primary-color);
+    border-radius: 2px;
+  }
+
+  .p-dozy-ai {
+    font-size: 1rem;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  /* First paragraph styling */
+  .main-content-dozy-ai > .p-dozy-ai:first-of-type {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-gray);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .ol-dozy-ai {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .ol-dozy-ai li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+  }
+
+  .ul-dozy-ai {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  .li-dozy-ai {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+    color: var(--text-gray);
+  }
+
+  .li-dozy-ai::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .arrow-link {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid var(--primary-color);
+    margin: 2rem auto;
+    display: block;
+    max-width: 300px;
+    position: relative;
+  }
+
+  .arrow-link:hover {
+    background: #00a8c7;
+    border-color: #00a8c7;
+    transform: translateY(-2px);
+  }
+
+  .arrow-link::after {
+    content: '→';
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+    transition: var(--transition);
+  }
+
+  .arrow-link:hover::after {
+    transform: translateX(5px);
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .main-content-dozy-ai {
+      padding: 5rem 1rem 2rem;
+    }
+
+    .section-dozy-ai {
+      padding: 2rem 1rem;
+    }
+
+    .h1-dozy-ai {
+      font-size: 2rem;
+    }
+
+    .dozy-ai-subtitle {
+      font-size: 1.5rem;
+    }
+
+    .h2-dozy-ai {
+      font-size: 1.5rem;
+    }
+
+    .h3-dozy-ai {
+      font-size: 1.2rem;
+      padding-left: 1.5rem;
+    }
+
+    .main-content-dozy-ai > .p-dozy-ai:first-of-type {
+      padding: 1.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .main-content-dozy-ai {
+      margin: 0 0.5rem;
+    }
+
+    .h1-dozy-ai {
+      font-size: 1.8rem;
+    }
+
+    .dozy-ai-subtitle {
+      font-size: 1.3rem;
+    }
+
+    .h2-dozy-ai {
+      font-size: 1.3rem;
+    }
+
+    .h3-dozy-ai {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* Animation classes */
+  .fade-in {
+    opacity: 1;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .delay-1 {
+    animation-delay: 0.1s;
+  }
+
+  .delay-2 {
+    animation-delay: 0.2s;
+  }
+
+  .delay-3 {
+    animation-delay: 0.3s;
+  }
+
+  .delay-4 {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Focus styles for accessibility */
+  .arrow-link:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+</style>
+
 <svelte:head>
   <title>Revolutionizing Workflows with Secure Knowledge Solutions - Dozy AI</title>
 </svelte:head>

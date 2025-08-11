@@ -1,293 +1,395 @@
 <script>
-    import HamburgerMenu from './HamburgerMenu.svelte';
-    import { onMount } from 'svelte';
-    import { fly } from 'svelte/transition';
-    import { clickOutside } from '$lib/actions/clickOutside.js';
-    
-    let scrolled = false;
-    let menuOpen = false;
+  import { onMount } from 'svelte';
+  import { fly } from 'svelte/transition';
+  import { clickOutside } from '$lib/actions/clickOutside.js';
 
-    onMount(() => {
-        // Initialize scrolled state
-        scrolled = window.scrollY > 50;
+  // State
+  let scrolled = false;
+  let menuOpen = false;
 
-        const handleScroll = () => {
-            scrolled = window.scrollY > 50;
-        };
+  // Scroll handler
+  const handleScroll = () => {
+    scrolled = window.scrollY > 50;
+  };
 
-        const handleResize = () => {
-            if (window.innerWidth >= 1024) {
-                menuOpen = false;
-            }
-        };
+  // Resize handler (close menu on desktop)
+  const handleResize = () => {
+    if (window.innerWidth >= 1024) {
+      menuOpen = false;
+    }
+  };
 
-        // Add event listeners
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('resize', handleResize);
+  // Add event listeners
+  onMount(() => {
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
 
-        // Cleanup
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', handleResize);
-        };
-    });
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
+  });
 
+  // Close menu when link is clicked
+  const closeMenu = () => {
+    menuOpen = false;
+  };
 </script>
 
-<header
-    class="sticky top-0 z-30 transition-all duration-300 h-20 px-4 "
-    class:bg-black={menuOpen}
-    class:bg-white-opacity={!menuOpen && scrolled}
-    class:bg-transparent={!menuOpen && !scrolled}
-    class:text-white={menuOpen}
-    class:text-gray-800={!menuOpen && !scrolled}
->
-    <section class="header-container flex navbar flex items-center justify-between w-full h-full">
-        <!-- Hamburger Menu (visible on mobile) -->
-        <div class="flex-none lg:hidden">
-            <HamburgerMenu
-                class="btn btn-square btn-ghost"
-                bind:checked={menuOpen}
-                {scrolled}
-                {menuOpen}
-                aria-label="Toggle navigation menu"
-                aria-expanded={menuOpen}
-            />
-        </div>
+<style>
+  :root {
+    --header-height: 4rem;
+    --transition-speed: 0.3s;
+    --menu-bg: rgba(0, 0, 0, 0.95);
+    --link-hover: #00c9ec;
+  }
 
-        <!-- Logo Section -->
-        <div class="flex-1 text-center lg:text-left">
-            <a
-                href="/"
-                class="text-2xl font-semibold"
-                class:text-off-white={!menuOpen && scrolled}
-                class:text-white={menuOpen}
-            >
-                dozydonut
-            </a>
-        </div>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
 
-        <!-- Add a placeholder div to balance the hamburger menu width -->
-        <div class="flex-none w-12 lg:hidden"></div>
+  .bg-transparent {
+    background-color: transparent;
+  }
 
-        <!-- Navigation Links -->
-        <nav class="hidden lg:flex lg:space-x-6 lg:items-center" aria-label="Main navigation">
-            <ul class="flex space-x-4">
-                <li>
-                    <a
-                        class="hover:text-gray-900 transition duration-200"
-                        class:text-off-white={!menuOpen && scrolled}
-                        class:text-white={menuOpen}
-                        href="/products"
-                        >Products</a
-                    >
-                </li>
-                <li>
-                    <a
-                        class="hover:text-gray-900 transition duration-200"
-                        class:text-off-white={!menuOpen && scrolled}
-                        class:text-white={menuOpen}
-                        href="/vending"
-                        >Smart Vending</a
-                    >
-                </li>
-                <li>
-                    <a
-                        class="hover:text-gray-900 transition duration-200"
-                        class:text-off-white={!menuOpen && scrolled}
-                        class:text-white={menuOpen}
-                        href="/dozy-ai"
-                        >Dozy AI</a
-                    >
-                </li>
-                <li>
-                    <a
-                        class="hover:text-gray-900 transition duration-200"
-                        class:text-off-white={!menuOpen && scrolled}
-                        class:text-white={menuOpen}
-                        href="/our-story"
-                        >Our Story</a
-                    >
-                </li>
-                <li>
-                    <a
-                        class="hover:text-gray-900 transition duration-200"
-                        class:text-off-white={!menuOpen && scrolled}
-                        class:text-white={menuOpen}
-                        href="/contact"
-                        >Contact</a
-                    >
-                </li>
-            </ul>
-        </nav>
-    </section>
+  .bg-white {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
 
-    {#if menuOpen}
-        <section
-            class="collapsible z-40 w-full"
-            class:bg-black={menuOpen}
-            class:text-white={menuOpen}
-            transition:fly="{{ y: -100, duration: 300 }}"
-        >
-            <nav>
-                <ul class="flex flex-col items-center gap-2">
-                    <li><a href="/products" on:click={() => menuOpen = false}>Products</a></li>
-                    <li><a href="/vending" on:click={() => menuOpen = false}>Smart Vending</a></li>
-                    <li><a href="/dozy-ai" on:click={() => menuOpen = false}>Dozy AI</a></li>
-                    <li><a href="/our-story" on:click={() => menuOpen = false}>Our Story</a></li>
-                    <li><a href="/contact" on:click={() => menuOpen = false}>Contact</a></li>
-                </ul>
-            </nav>
-        </section>
-    {/if}
-</header>
+  .text-white {
+    color: #fff;
+  }
 
-<style lang="postcss">
-    /* Ensure header content is centered */
+  .text-gray-800 {
+    color: #2d3748;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    height: var(--header-height);
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1001;
+  }
+
+  .logo-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed);
+    position: relative;
+    z-index: 1001;
+  }
+
+  .logo-link:hover {
+    color: var(--link-hover);
+  }
+
+  .menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color var(--transition-speed);
+  }
+
+  .menu-btn:hover {
+    color: var(--link-hover);
+  }
+
+  .menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: currentColor;
+    border-radius: 4px;
+    transition: all var(--transition-speed);
+    position: relative;
+  }
+
+  .menu-btn span::before,
+  .menu-btn span::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: currentColor;
+    border-radius: 4px;
+    transition: all var(--transition-speed);
+  }
+
+  .menu-btn span::before {
+    position: absolute;
+    top: -6px;
+    left: 0;
+  }
+
+  .menu-btn span::after {
+    position: absolute;
+    top: 6px;
+    left: 0;
+  }
+
+  .menu-open .menu-btn {
+    color: #ffffff;
+    z-index: 1002;
+    position: relative;
+  }
+
+  .menu-open .menu-btn:hover {
+    color: var(--link-hover);
+  }
+
+  .menu-open .menu-btn span {
+    background-color: transparent;
+  }
+
+  .menu-open .menu-btn span::before {
+    top: 0;
+    transform: rotate(45deg);
+    background-color: currentColor;
+    transition: all var(--transition-speed);
+  }
+
+  .menu-open .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+    background-color: currentColor;
+    transition: all var(--transition-speed);
+  }
+
+  nav {
+    background-color: transparent;
+    display: flex;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  nav li {
+    margin: 0;
+  }
+
+  .nav-link {
+    color: inherit;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color var(--transition-speed);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--link-hover);
+    transition: width var(--transition-speed);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--link-hover);
+  }
+
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--menu-bg);
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+  }
+
+  /* Desktop Styles */
+  @media (min-width: 1024px) {
+    nav {
+      position: static;
+      width: auto;
+      height: auto;
+      background: transparent;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      transform: none;
+      opacity: 1;
+      z-index: auto;
+    }
+
+    nav ul {
+      flex-direction: row;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .nav-link {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+    }
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 1023px) {
+    .mobile-overlay {
+      display: block;
+    }
+    .menu-btn {
+      display: flex;
+    }
+
     .header-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-        box-sizing: border-box;
+      padding: 0 1.5rem;
     }
 
-    header {
-        position: fixed;
-        width: 100%;
-        z-index: 30;
-        top: 0;
-        left: 0;
-        height: 5rem;
+    .logo-link {
+      color: #2d3748 !important;
     }
 
-    .collapsible {
-        position: fixed;
-        left: 0;
-        width: 100%;
-        background-color: rgba(36, 36, 36, 0.9); /* Match the faded background */
-        z-index: 29;
-        padding: 2rem 0;
-        overflow: hidden;
+    .logo-link:hover {
+      color: var(--link-hover) !important;
     }
 
-    .collapsible nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem; /* Increase gap between menu items */
+    .menu-open .logo-link {
+      color: white !important;
     }
 
-    .collapsible nav ul li a {
-        font-size: 1.25rem; /* Larger font size */
-        color: white;
-        text-decoration: none;
-        transition: opacity 0.2s ease;
+    .menu-open .logo-link:hover {
+      color: var(--link-hover) !important;
     }
 
-    .collapsible nav ul li a {
-        font-size: 1.25rem;
-        color: white;
-        text-decoration: none;
-        transition: all 0.2s ease;
-        position: relative;
-        padding-bottom: 2px;
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: transparent;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(-100%);
+      transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+      opacity: 0;
+      color: white;
+      z-index: 1000;
     }
 
-    .collapsible nav ul li a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 50%;
-        background-color: white;
-        transition: all 0.2s ease;
-        transform: translateX(-50%);
+    .menu-open nav {
+      transform: translateX(0);
+      opacity: 1;
     }
 
-    .collapsible nav ul li a:hover::after {
-        width: 100%;
-    }
-    /* Add transition for smooth open/close */
-    .collapsible {
-        transition: transform 0.3s ease-in-out;
+    nav ul {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
     }
 
-    /* .collapsible[open] {
-        transform: translateY(0);
-    } */
-
-    .navbar {
-        transition: background-color 0.3s ease, color 0.3s ease;
+    .nav-link {
+      font-size: 1.25rem;
+      color: white;
+      transition: color var(--transition-speed);
+      position: relative;
+      padding: 0.5rem 0;
     }
 
-    .bg-transparent {
-        background-color: transparent;
+    .nav-link:hover {
+      color: var(--link-hover);
     }
 
-    .bg-white-opacity {
-        background-color: rgba(36, 36, 36, 0.9);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background-color: var(--link-hover);
+      transition: width var(--transition-speed);
     }
 
-    .bg-black {
-        background-color: rgba(36, 36, 36, 0.95);
+    .nav-link:hover::after {
+      width: 80%;
     }
-
-    .text-gray-800 {
-        color: #2d3748;
-    }
-
-    .text-off-white {
-        color: #f0f0f0;
-    }
-
-    .text-white {
-        color: white;
-    }
-
-    a {
-        font-size: 1.75rem; /* Slightly larger for emphasis */
-    }
-
-    ul {
-        gap: 1rem;
-    }
-
-    ul li a {
-        font-size: 1.1rem; /* Standardize link size */
-        position: relative;
-        color: inherit; /* Maintain text color */
-        text-decoration: none; /* Remove default underline */
-        padding-bottom: 2px; /* Space for the underline */
-        transition: color 0.2s ease-in-out; /* Smooth text color change */
-    }
-
-    ul li a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 50%;
-        background-color: currentColor; /* Match underline color to text color */
-        transition: width 0.3s ease, left 0.3s ease; /* Smooth animation */
-        /* transform: translateX(-50%); */
-    }
-
-    .text-gray-800::after {
-        background-color: black; /* Black underline for black text */
-    }
-
-    ul li a:hover::after {
-        width: 100%; /* Expand underline to full width */
-        left: 0; /* Center align it */
-    }
-
-    .text-white::after {
-        background-color: white; /* White underline for white text */
-    }
-
+  }
 </style>
 
+<header
+  class="site-header text-gray-800"
+  class:menu-open={menuOpen}
+>
+  <section class="header-container">
+    <!-- Logo -->
+    <div>
+      <a href="/" class="logo-link" on:click={closeMenu}>DozyDonut</a>
+    </div>
 
+    <!-- Hamburger Button -->
+    <button
+      class="menu-btn"
+      aria-label="Toggle menu"
+      aria-expanded={menuOpen}
+      on:click={() => menuOpen = !menuOpen}
+    >
+      <span></span>
+    </button>
+
+    <!-- Mobile Overlay -->
+    {#if menuOpen}
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
+      <div class="mobile-overlay" on:click={() => menuOpen = false}></div>
+    {/if}
+
+    <!-- Navigation -->
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="/products" class="nav-link" on:click={closeMenu}>Products</a></li>
+        <li><a href="/vending" class="nav-link" on:click={closeMenu}>Smart Vending</a></li>
+        <li><a href="/dozy-ai" class="nav-link" on:click={closeMenu}>Dozy AI</a></li>
+        <li><a href="/our-story" class="nav-link" on:click={closeMenu}>Our Story</a></li>
+        <li><a href="/contact" class="nav-link" on:click={closeMenu}>Contact</a></li>
+      </ul>
+    </nav>
+  </section>
+</header>

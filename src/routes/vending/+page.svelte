@@ -1,5 +1,6 @@
 <svelte:head>
   <title>Smart Vending Machines - Dozy Donut</title>
+  <meta name="description" content="Modern smart vending machines for gyms, clinics, and apartment complexes. Self-service convenience with AI-powered checkout.">
 </svelte:head>
 
 <!-- Skip Links -->
@@ -18,12 +19,12 @@
 
       <div class="vending-content">
         <div class="vending-text">
-          <h2 class="vending-main-title">THE <span class="highlight">FUTURE</span><br/>OF CONSUMER<br/>CONVENIENCE.</h2>
+          <h1 class="vending-main-title">THE <span class="highlight">FUTURE</span><br/>OF CONSUMER<br/>CONVENIENCE.</h1>
           <p class="vending-description">We offer a premier unattended retail experience for gyms, clinics, apartment complexes, and more:</p>
           
           <div class="vending-machine-mobile">
             <div class="machine-container-mobile">
-              <img src="/images/vending_machine.png" alt="Modern Smart Vending Machine" class="machine-image-mobile" />
+              <img src="/images/vending_machine.png" alt="Modern Smart Vending Machine" class="machine-image-mobile" loading="lazy" />
             </div>
           </div>
 
@@ -39,7 +40,7 @@
         
         <div class="vending-machine">
           <div class="machine-container">
-            <img src="/images/vending_machine.png" alt="Modern Smart Vending Machine" class="machine-image" />
+            <img src="/images/vending_machine.png" alt="Modern Smart Vending Machine" class="machine-image" loading="lazy" />
           </div>
         </div>
       </div>
@@ -48,7 +49,7 @@
 
   <div class="vending-cta">
     <div class="cta-content">
-      <h3 class="cta-title">Give us a call and see if modern vending is right for your business.</h3>
+      <h2 class="cta-title">Give us a call and see if modern vending is right for your business.</h2>
       <div class="cta-contact">
         <p class="contact-info">Contact <a href="tel:+17737339445" class="phone-link">(773) 733-9445</a> or email <a href="mailto:contact@dozydonut.com" class="email-link">contact@dozydonut.com</a> now to book an appointment!</p>
       </div>
@@ -57,47 +58,23 @@
 </main>
 
 <style>
-      /* Import Nourd Font Family */
-  @font-face {
-    font-family: 'Nourd';
-    src: url('/fonts/nourd_regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+  :global(html) {
+    scroll-behavior: smooth;
   }
 
-  @font-face {
-    font-family: 'Nourd';
-    src: url('/fonts/nourd_light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    z-index: 1000;
+    text-decoration: none;
   }
 
-  @font-face {
-    font-family: 'Nourd';
-    src: url('/fonts/nourd_medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Nourd';
-    src: url('/fonts/nourd_semi_bold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Nourd';
-    src: url('/fonts/nourd_bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Nourd';
-    src: url('/fonts/nourd_heavy.ttf') format('truetype');
-    font-weight: 800;
-    font-style: normal;
+  .skip-link:focus {
+    top: 6px;
   }
 
   .vending-main {
@@ -107,8 +84,9 @@
 
   .vending-hero {
     min-height: 100vh;
-    color: black;
+    color: #000;
     padding: 80px 20px 40px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
   }
 
   .vending-container {
@@ -127,29 +105,12 @@
     text-align: left;
   }
 
-  .vending-title {
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    margin: 0;
-    line-height: 1.2;
-  }
-
   .vending-subtitle {
     font-size: 1.5rem;
     font-weight: 300;
     margin: 5px 0 0 0;
     letter-spacing: 1px;
-  }
-
-  .vending-logo {
-    width: 80px;
-    height: 80px;
-  }
-
-  .donut-icon {
-    width: 100%;
-    height: 100%;
+    color: #333;
   }
 
   .vending-content {
@@ -169,7 +130,7 @@
     font-weight: 900;
     line-height: 0.9;
     margin-bottom: 30px;
-    color: black;
+    color: #000;
   }
 
   .highlight {
@@ -181,14 +142,14 @@
     font-weight: 600;
     margin-bottom: 50px;
     font-style: italic;
-    color: black;
+    color: #333;
   }
 
   .vending-features {
     list-style: none;
     padding: 0;
     margin: 0;
-    color: black;
+    color: #000;
   }
 
   .vending-features li {
@@ -203,7 +164,7 @@
     content: "•";
     position: absolute;
     left: 0;
-    color: black;
+    color: #26c6da;
     font-weight: bold;
     font-size: 1.5rem;
     line-height: 1.1;
@@ -217,89 +178,16 @@
     width: 450px;
     height: 500px;
     perspective: 1000px;
-  }
-
-  .machine-body {
-    /* width: 100%;
-    height: 100%; */
-    background-image: url("/images/vending_machine.png");
-    /* background: linear-gradient(to bottom, #2c2c2c 0%, #1a1a1a 100%);
-    border-radius: 20px;
-    border: 3px solid #333;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; */
-  }
-
-  .machine-display {
-    height: 60px;
-    background: #000;
-    margin: 15px;
-    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .display-screen {
-    width: 90%;
-    height: 70%;
-    background: linear-gradient(45deg, #1e3c72 0%, #2a5298 100%);
-    border-radius: 5px;
-  }
-
-  .machine-shelves {
-    flex: 1;
-    padding: 0 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .shelf {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    height: 70px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-  }
-
-  .product {
-    border-radius: 6px;
-    height: 50px;
-  }
-
-  .product-1 { background: #ff6b6b; }
-  .product-2 { background: #4ecdc4; }
-  .product-3 { background: #45b7d1; }
-  .product-4 { background: #96ceb4; }
-  .product-5 { background: #feca57; }
-  .product-6 { background: #ff9ff3; }
-  .product-7 { background: #54a0ff; }
-  .product-8 { background: #5f27cd; }
-  .product-9 { background: #00d2d3; }
-  .product-10 { background: #ff9f43; }
-  .product-11 { background: #10ac84; }
-  .product-12 { background: #ee5a6f; }
-  .product-13 { background: #c44569; }
-  .product-14 { background: #3742fa; }
-  .product-15 { background: #2ed573; }
-  .product-16 { background: #ffa502; }
-
-  .machine-bottom {
-    height: 80px;
-    padding: 15px;
-  }
-
-  .pickup-area {
-    width: 100%;
-    height: 100%;
-    background: #000;
+  .machine-image {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
     border-radius: 10px;
-    border: 2px solid #333;
   }
 
   .vending-cta {
@@ -344,10 +232,6 @@
     display: none;
   }
 
-  .machine-image {
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
-  }
-
   @media (max-width: 768px) {
     .vending-machine-mobile {
       display: block;
@@ -363,8 +247,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: transparent;
-      padding: 0;
     }
 
     .machine-image-mobile {
@@ -372,8 +254,7 @@
       height: auto;
       object-fit: contain;
       border-radius: 15px;
-      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
-      background: transparent;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
     }
 
     .vending-machine {
@@ -381,7 +262,7 @@
     }
 
     .vending-hero {
-      padding: 100px 20px 0px;
+      padding: 100px 20px 40px;
     }
 
     .vending-header {
@@ -389,10 +270,6 @@
       align-items: center;
       text-align: center;
       margin-bottom: 30px;
-    }
-
-    .vending-logo {
-      margin-top: 20px;
     }
 
     .vending-content {
@@ -409,10 +286,20 @@
       font-size: 2.5rem;
     }
 
+    .vending-description {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .vending-features {
+      text-align: left;
+      margin: 0 auto;
+      max-width: 400px;
+    }
+
     .machine-container {
       width: 250px;
-      height: 400px;
-      margin: 0 auto;
+      height: 320px;
     }
 
     .cta-title {
@@ -424,7 +311,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     .vending-main-title {
       font-size: 2rem;
     }
@@ -440,16 +327,11 @@
 
     .machine-container {
       width: 200px;
-      height: 320px;
+      height: 280px;
     }
 
-    .shelf {
-      height: 50px;
-      padding: 5px;
-    }
-
-    .product {
-      height: 40px;
+    .cta-title {
+      font-size: 1.2rem;
     }
   }
 </style>
