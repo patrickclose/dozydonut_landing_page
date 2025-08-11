@@ -422,6 +422,8 @@
     /* Services & Process Section */
     #services-process-section {
         background-color: var(--white);
+        display: flex;
+        flex-direction: column;
     }
 
     /* Services & Process Section */
