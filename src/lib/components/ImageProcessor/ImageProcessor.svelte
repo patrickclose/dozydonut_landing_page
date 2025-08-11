@@ -440,7 +440,7 @@
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
-        transition: all 0.3s ease;
+        transition: background-color .3s cubic-bezier(.165,.84,.44,1),box-shadow .3s cubic-bezier(.165,.84,.44,1);
         margin-top: 20px;
     }
 

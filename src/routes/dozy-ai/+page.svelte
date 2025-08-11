@@ -12,7 +12,7 @@
     --light-gray: #f8fafb;
     --text-gray: #555;
     --border-gray: #e0e0e0;
-    --transition: all 0.3s ease;
+    --transition: background-color .3s cubic-bezier(.165,.84,.44,1),box-shadow .3s cubic-bezier(.165,.84,.44,1);
   }
 
   :global(body) {

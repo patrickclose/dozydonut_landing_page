@@ -17,7 +17,7 @@
     --light-gray: #f8fafb;
     --text-gray: #555;
     --border-gray: #e0e0e0;
-    --transition: all 0.3s ease;
+    --transition: background-color .3s cubic-bezier(.165,.84,.44,1),box-shadow .3s cubic-bezier(.165,.84,.44,1);
   }
 
   :global(body) {
@@ -66,11 +66,11 @@
 
   .contact-form {
     background: var(--white);
-    border-radius: 12px;
+    border-radius: 4px;
     padding: 3rem 2rem;
     width: 100%;
     max-width: 600px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 4px #08080814,0 1px 2px #08080833,inset 0 6px 12px #ffffff1f,inset 0 1px 1px #fff3;
     border: 1px solid var(--border-gray);
   }
 
@@ -90,8 +90,9 @@
   .contact-form-group textarea {
     width: 100%;
     padding: 0.75rem 1rem;
-    border: 2px solid var(--border-gray);
-    border-radius: 8px;
+    border: 1px solid var(--border-gray);
+    box-shadow: 0 4px 4px #08080814,0 1px 2px #08080833,inset 0 6px 12px #ffffff1f,inset 0 1px 1px #fff3;
+    border-radius: 4px;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     color: var(--secondary-color);
@@ -104,7 +105,7 @@
   .contact-form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(0, 201, 236, 0.1);
+    box-shadow: 0 4px 4px #08080814,0 1px 2px #08080833,inset 0 6px 12px #ffffff1f,inset 0 1px 1px #fff3;
   }
 
   .contact-form-group textarea {
@@ -118,7 +119,8 @@
     background: var(--primary-color);
     color: var(--white);
     padding: 1rem 2rem;
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 4px 4px #08080814,0 1px 2px #08080833,inset 0 6px 12px #ffffff1f,inset 0 1px 1px #fff3;
     border-radius: 4px;
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;

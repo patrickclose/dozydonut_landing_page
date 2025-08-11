@@ -241,7 +241,7 @@
         --secondary-color: #000000;
         --black: #000000;
         --white: #ffffff;
-        --transition: all 0.3s ease;
+        --transition: background-color .3s cubic-bezier(.165,.84,.44,1),box-shadow .3s cubic-bezier(.165,.84,.44,1);
     }
 
     * {
@@ -348,6 +348,7 @@
         color: white;
         padding: 1rem 2rem;
         border-radius: 4px;
+        box-shadow: 0 4px 4px #08080814,0 1px 2px #08080833,inset 0 6px 12px #ffffff1f,inset 0 1px 1px #fff3;
         text-decoration: none;
         font-weight: 600;
         font-size: 1.1rem;
@@ -366,11 +367,12 @@
         color: var(--black);
         padding: 1rem 2rem;
         border-radius: 4px;
+        box-shadow: 0 4px 4px #08080814,0 1px 2px #08080833,inset 0 6px 12px #ffffff1f,inset 0 1px 1px #fff3;
         text-decoration: none;
         font-weight: 600;
         font-size: 1.1rem;
         transition: var(--transition);
-        border: 2px solid var(--black);
+        border: 1px solid var(--black);
     }
 
     .secondary-cta:hover {
@@ -427,9 +429,9 @@
     }
 
     /* Services & Process Section */
-    #services-process-section {
+    /* #services-process-section {
         background: #fafbfc;
-    }
+    } */
 
     /* Top Bar Layout */
     .top-bar-container {
@@ -738,6 +740,7 @@
         border: 2px solid var(--primary-color);
         padding: 1rem 2rem;
         border-radius: 4px;
+        box-shadow: 0 4px 4px #08080814,0 1px 2px #08080833,inset 0 6px 12px #ffffff1f,inset 0 1px 1px #fff3;
         text-decoration: none;
         font-weight: 600;
         font-size: 1rem;
@@ -881,7 +884,8 @@
         display: inline-block;
         background: transparent;
         color: var(--black);
-        border: 2px solid var(--black);
+        border: 1px solid var(--black);
+        box-shadow: 0 4px 4px #08080814,0 1px 2px #08080833,inset 0 6px 12px #ffffff1f,inset 0 1px 1px #fff3;
         padding: 1rem 1.5rem;
         border-radius: 4px;
         text-decoration: none;
@@ -941,12 +945,6 @@
         .hero-cta {
             flex-direction: column;
             align-items: center;
-        }
-
-        .primary-cta,
-        .secondary-cta {
-            width: 100%;
-            max-width: 280px;
         }
         
         .services-process-container {
