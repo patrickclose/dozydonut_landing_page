@@ -520,6 +520,7 @@
     }
 
     .ul-design {
+        text-align: left;
         list-style: none;
         padding: 0;
     }
@@ -592,7 +593,7 @@
     .responsive-design-svg svg {
         width: 100%;
         height: auto;
-        max-width: 100px;
+        max-width: 240px;
     }
 
     @media (max-width: 768px) {
@@ -623,7 +624,7 @@
         }
 
         .responsive-design-svg svg {
-            max-width: 100px;
+            max-width: 240px;
         }
     }
 
