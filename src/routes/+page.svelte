@@ -144,9 +144,8 @@
                         </svg>
                     </div>
                     <div class="web-dev-text">
-                        <p>We specialize in custom CMS enhancements, including integrating Cloudinary with AVIF CDN hosting for optimized image delivery on Squarespace sites. Our solutions improve performance, customization capabilities, and security while seamlessly integrating with your existing platform.</p>
-                        
-                        <p style="margin-top: 1rem;">Featured project: We developed a <a href="https://squarespace-recipe-generator.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: underline;">Squarespace Recipe Generator</a> - a custom code generator that creates Squarespace code block templates for recipe makers. This tool includes temperature conversion between Celsius and Fahrenheit and recipe scaling functionality, demonstrating our expertise in creating practical development tools for content creators.</p>
+                        <p>We provide custom CMS enhancements, integrating Cloudinary with AVIF CDN for optimized image delivery on Squarespace, enhancing performance, customization, and security.</p>
+                        <p style="margin-top: 1rem;">Featured project: We created a <a href="https://squarespace-recipe-generator.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: underline;">Squarespace Recipe Generator</a>, a tool for recipe makers with code block templates, temperature conversion, and scaling, showcasing our expertise in practical content creation tools.</p>
                     </div>
                 </div>
             </details>
@@ -456,6 +455,10 @@
     }
 
     @media (max-width: 768px) {
+        .top-bar-column {
+            padding: 0;
+        }
+
         p {
             text-align: left;
         }
@@ -486,7 +489,7 @@
         }
 
         .full-width-services {
-            padding: 0 4rem;
+            padding: 0;
         }
     }
 
@@ -979,6 +982,11 @@
     }
 
     @media (max-width: 768px) {
+        #pricing-section {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
         .offerings-subheading {
             text-align: left;
         }
