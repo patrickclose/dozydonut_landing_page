@@ -489,7 +489,7 @@
         }
 
         .full-width-services {
-            padding: 0;
+            padding: 0 1rem;
         }
     }
 
@@ -524,10 +524,54 @@
     /* Hide default triangle markers */
     summary {
         list-style: none;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     summary::-webkit-details-marker {
         display: none;
+    }
+
+    /* Arrow indicators for dropdowns */
+    summary::after {
+        content: '▼';
+        color: var(--primary-color);
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    /* Shimmer effect for arrows - similar to nav links */
+    summary::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary-color);
+        transition: width 0.3s ease;
+    }
+
+    summary:hover::before {
+        width: 100%;
+    }
+
+    /* Rotate arrow when open */
+    details[open] summary::after {
+        transform: rotate(180deg);
+        color: #00a8c7;
+    }
+
+    /* Hover effects for summary */
+    summary:hover {
+        cursor: pointer;
+    }
+
+    summary:hover::after {
+        color: #00a8c7;
     }
 
     .toggle-paragraph {
@@ -992,7 +1036,7 @@
         }
 
         section {
-            padding: 3rem 1rem;
+            padding: 3rem 0rem;
         }
 
         #hero-section {
@@ -1036,7 +1080,7 @@
         }
 
         .inner-container {
-            padding: 0 1rem;
+            padding: 0;
             max-width: 100%;
         }
 
