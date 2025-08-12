@@ -996,7 +996,7 @@
         }
 
         #hero-section {
-            padding: 4rem 4rem 3rem;
+            padding: 4rem 1.5rem 3rem;
         }
         
         .section-heading {
