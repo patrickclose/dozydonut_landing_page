@@ -940,6 +940,10 @@
 
     /* Responsive Improvements */
     @media (max-width: 1024px) {
+        h2 {
+            text-align: left;
+        }
+         
         .audit-price {
             align-items: unset;
         }
@@ -975,6 +979,10 @@
     }
 
     @media (max-width: 768px) {
+        .offerings-subheading {
+            text-align: left;
+        }
+
         section {
             padding: 3rem 1rem;
         }
@@ -1034,7 +1042,7 @@
         }
         
         .section-column .section-heading {
-            text-align: center;
+            text-align: left;
         }
     }
 
