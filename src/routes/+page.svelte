@@ -72,7 +72,7 @@
                 </details>
                 <details class="how-details">
                     <summary><h3 class="toggle-heading">Enjoy Your Website</h3></summary>
-                    <p class="toggle-paragraph">🎉</p>
+                    <p class="toggle-paragraph">🎉🎉🎉</p>
                 </details>
             </div>
         </div>
@@ -456,6 +456,30 @@
     }
 
     @media (max-width: 768px) {
+        p {
+            text-align: left;
+        }
+
+        .hero-cta {
+            align-items: start;
+        }
+
+        .section-heading {
+            text-align: left;
+        }
+
+        h3 {
+            text-align: left;
+        }
+
+        .h1-design {
+            text-align: left;
+        }
+
+        .hero-subtitle {
+            text-align: left;
+        }
+        
         .top-bar-container {
             grid-template-columns: 1fr;
             margin-bottom: 2rem;
@@ -916,7 +940,32 @@
 
     /* Responsive Improvements */
     @media (max-width: 1024px) {
+        .audit-price {
+            align-items: unset;
+        }
+
+        .audit-box {
+            text-align: left;
+        }
+
+        .section-subtitle {
+            text-align: left;
+        }
+
+        .price-detail {
+            text-align: left;
+        }
+
+        .old-price-box {
+            text-align: left;
+        }
+
+        .new-price-box {
+            text-align: left;
+        }
+        
         .price-box-container {
+            text-align: left;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
         
@@ -944,7 +993,7 @@
 
         .hero-cta {
             flex-direction: column;
-            align-items: center;
+            align-items: left;
         }
         
         .services-process-container {
