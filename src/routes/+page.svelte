@@ -543,21 +543,6 @@
         position: relative;
     }
 
-    /* Shimmer effect for arrows - similar to nav links */
-    summary::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: var(--primary-color);
-        transition: width 0.3s ease;
-    }
-
-    summary:hover::before {
-        width: 100%;
-    }
 
     /* Rotate arrow when open */
     details[open] summary::after {
