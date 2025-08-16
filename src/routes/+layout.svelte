@@ -1,7 +1,8 @@
 <!-- File: src/routes/+layout.svelte -->
 <script>
+    import { page } from '$app/stores';
+    import { fade, fly } from 'svelte/transition';
     import Header from '$lib/components/Header.svelte';
-    // Import your global styles if you have them
     import '../app.css';
     import Footer from '$lib/components/Footer.svelte';
 </script>
@@ -11,10 +12,28 @@
     p {
         font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
+    
+    main {
+        position: relative;
+        min-height: 100vh;
+    }
+    
+    .page-transition {
+        position: relative;
+        width: 100%;
+    }
 </style>
 
 <Header />
 <main>
-    <slot />
+    {#key $page.url.pathname}
+        <div 
+            class="page-transition"
+            in:fly={{ x: 50, duration: 300, delay: 150 }}
+            out:fade={{ duration: 150 }}
+        >
+            <slot />
+        </div>
+    {/key}
 </main>
 <Footer />

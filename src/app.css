@@ -97,3 +97,81 @@ a, button {
   box-sizing: border-box;
 }
 
+/* Smooth page transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Prevent layout shift during transitions */
+main {
+  contain: layout;
+}
+
+/* Hardware acceleration for smoother transitions */
+.page-transition {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize link hover animations */
+a {
+  transition: all 0.2s ease;
+}
+
+/* Disable selection highlighting and focus outlines */
+*:focus,
+*:focus-visible,
+*:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Disable text selection highlighting */
+*::selection {
+  background: transparent;
+}
+
+*::-moz-selection {
+  background: transparent;
+}
+
+/* Disable button/link selection effects */
+button:focus,
+button:active,
+a:focus,
+a:active,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+/* Prevent user selection on interactive elements */
+button,
+a,
+.nav-link {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
