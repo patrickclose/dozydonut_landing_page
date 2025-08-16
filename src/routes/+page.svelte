@@ -361,6 +361,13 @@
         transform: translateY(-2px);
     }
 
+    .primary-cta:active,
+    .primary-cta:focus {
+        background: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+    }
+
     .secondary-cta {
         background: transparent;
         color: var(--black);

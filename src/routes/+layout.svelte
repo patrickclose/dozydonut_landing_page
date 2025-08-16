@@ -29,7 +29,7 @@
     {#key $page.url.pathname}
         <div 
             class="page-transition"
-            in:fly={{ x: 50, duration: 300, delay: 150 }}
+            in:fade={{ duration: 300, delay: 150 }}
             out:fade={{ duration: 150 }}
         >
             <slot />
