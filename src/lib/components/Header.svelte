@@ -385,6 +385,7 @@
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="/products" class="nav-link" on:click={closeMenu}>Products</a></li>
+        <li><a href="/web-performance" class="nav-link" on:click={closeMenu}>Web Performance</a></li>
         <li><a href="/vending" class="nav-link" on:click={closeMenu}>Smart Vending</a></li>
         <li><a href="/dozy-ai" class="nav-link" on:click={closeMenu}>Dozy AI</a></li>
         <li><a href="/our-story" class="nav-link" on:click={closeMenu}>Our Story</a></li>
