@@ -110,15 +110,15 @@
                 <div class="process-description">
                     <p>These metrics tell you if you have a performance problem and roughly how severe it is.</p>
                     <div class="diagnostic-checklist">
-                        <div class="check-item warning">
+                        <div class="check-item critical">
                             <span class="metric">LCP > 2.5s</span>
                             <span class="meaning">Main content loads too slowly</span>
                         </div>
-                        <div class="check-item warning">
+                        <div class="check-item critical">
                             <span class="metric">FID > 100ms</span>
                             <span class="meaning">Site feels unresponsive to clicks</span>
                         </div>
-                        <div class="check-item warning">
+                        <div class="check-item critical">
                             <span class="metric">CLS > 0.1</span>
                             <span class="meaning">Content jumps around while loading</span>
                         </div>
@@ -729,9 +729,9 @@
         flex-direction: column;
         gap: 0.3rem;
         padding: 0.8rem;
-        background: #f8f9fa;
+        background: rgba(245, 158, 11, 0.05);
         border-radius: 6px;
-        border-left: 3px solid var(--danger-color);
+        border-left: 3px solid var(--warning-color);
     }
 
     .issue-item strong {
